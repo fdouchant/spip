@@ -1,0 +1,28 @@
+// colors
+$fabrice-blue: rgb(79,129,189);
+$fabrice-dark-blue: rgb(37,64,97);
+$fabrice-grey: rgb(64,64,64);
+
+// Bootstrap
+
+// navbar
+$navbar-default-bg: $fabrice-grey;
+$navbar-default-brand-color: white;
+$navbar-default-brand-hover-color: $fabrice-blue;
+$navbar-default-color: white;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: $fabrice-blue;
+$navbar-default-link-active-color: white;
+
+// fonts
+$font-size-base: 16px;
+$font-family-base: 'Play', sans-serif;
+$icon-font-path: '/lib/bootstrap-sass/assets/fonts/bootstrap/';
+
+// headings
+$headings-color: $fabrice-dark-blue;
+
+// links
+$link-color: $fabrice-blue;
+$link-hover-color: $fabrice-dark-blue;
+$link-hover-decoration: underline;

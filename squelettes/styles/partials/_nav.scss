@@ -1,0 +1,15 @@
+/* Override nav settings */
+.navbar-text a {
+  color: $fabrice-blue;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+a.navbar-social {
+  margin-left: 10px;
+  @media (max-width: $screen-xs-min) {
+    margin-left: 5px;
+  }
+}

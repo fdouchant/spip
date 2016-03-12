@@ -1,0 +1,27 @@
+﻿﻿<INCLURE{fond=header, lang}{self=#SELF}>
+	<div class="section">
+		<BOUCLEn(ARTICLES){id_article}{lang}>
+		<div class="article">
+			<div class="article-heading">
+				<h1>#TITRE</h1>
+				<h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span></h2>
+			</div>
+			<div class="article-body">
+				#TEXTE
+			</div>
+			<div class="article-attachments">
+				<div class="row">
+				<BOUCLEdoc(DOCUMENTS){id_article}>
+					<div class="col-xs-6 col-md-2">
+						#LOGO_DOCUMENT
+						<div class="caption">
+							<a href="#URL_DOCUMENT">#TITRE ([(#TAILLE|taille_en_octets)])</a>
+						</div>
+					</div>
+				</BOUCLEdoc>
+				</div>
+			</div>
+		</div>
+		</BOUCLEn>
+	</div>
+<INCLURE{fond=footer, lang}{self=#SELF}>

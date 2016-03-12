@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Fabrice Douchant</title>
+    <link rel="shortcut icon" href="#CHEMIN{images/favicon.ico}" type="image/x-icon"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fabrice Douchant Personal Website" />
+    <meta name="theme-color" content="#404040" />
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/animate.css/animate.css" />
+    <link rel="stylesheet" href="/lib/jquery-colorbox/example2/colorbox.css" />
+    <!-- endbower -->
+
+    <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="#CHEMIN{css/main.min.css}"/>
+    <!--<link rel="stylesheet" type="text/css" href="#CHEMIN{css/main.css}"/>-->
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#nav-bar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand tlt" data-in-effect="flipInX" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">/* Fabrice Douchant */</a>
+            <p class="navbar-text">
+                <a href="[(#URL_SITE_SPIP|parametre_url{lang,[(#LANG|=={fr}|?{'en','fr'})]})]">
+                    <img height="18" alt="<multi>[fr]English[en]Français</multi>"
+                         src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
+                </a>
+                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social hidden-xs"><i
+                        class="fa fa-envelope-o"></i></a>
+                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social"><i
+                        class="fa fa-linkedin-square"></i></a>
+            </p>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="nav-bar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">
+                    <multi>[fr]À propos[en]About</multi>
+                </a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <multi>[fr]Mes Projets[en]My Projects</multi>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="[(#URL_PAGE{projects,lang=#LANG}|parametre_url{'id_rubrique',3})]">
+                                <multi>[fr]En cours[en]Ongoing</multi>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="[(#URL_PAGE{projects,lang=#LANG}|parametre_url{'id_rubrique',4})]">
+                                <multi>[fr]Archives[en]Archives</multi>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#URL_PAGE{projects,lang=#LANG}">
+                                <multi>[fr]Tous[en]All</multi>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+</nav>
+<div class="container">
