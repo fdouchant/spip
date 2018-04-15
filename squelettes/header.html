@@ -58,7 +58,7 @@
                         <multi>[fr]Mes Projets[en]My Projects</multi>
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
                         <li>
                             <a href="[(#URL_PAGE{projects,lang=#LANG}|parametre_url{'id_rubrique',3})]">
                                 <multi>[fr]En cours[en]Ongoing</multi>
@@ -69,6 +69,7 @@
                                 <multi>[fr]Archives[en]Archives</multi>
                             </a>
                         </li>
+                        <li role="separator" class="divider"></li>
                         <li>
                             <a href="#URL_PAGE{projects,lang=#LANG}">
                                 <multi>[fr]Tous[en]All</multi>
