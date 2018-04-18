@@ -33,16 +33,6 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand tlt" data-in-effect="flipInX" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">/* Fabrice Douchant */</a>
-            <p class="navbar-text">
-                <a href="[(#URL_SITE_SPIP|parametre_url{lang,[(#LANG|=={fr}|?{'en','fr'})]})]">
-                    <img height="18" alt="<multi>[fr]English[en]Français</multi>"
-                         src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
-                </a>
-                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social hidden-xs"><i
-                        class="fa fa-envelope-o"></i></a>
-                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social"><i
-                        class="fa fa-linkedin-square"></i></a>
-            </p>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,6 +68,17 @@
                     </ul>
                 </li>
             </ul>
+
+            <p class="navbar-text">
+                <a href="[(#URL_SITE_SPIP|parametre_url{lang,[(#LANG|=={fr}|?{'en','fr'})]})]">
+                    <img height="20" alt="<multi>[fr]English[en]Français</multi>"
+                         src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
+                </a>
+                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social"><i
+                        class="fa fa-envelope-o"></i></a>
+                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social"><i
+                        class="fa fa-linkedin-square"></i></a>
+            </p>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 

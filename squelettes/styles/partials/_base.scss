@@ -5,3 +5,10 @@ html {
     padding-bottom: 60px;
   }
 }
+
+/* For inpage invisible anchors */
+a.anchor {
+  position: relative;
+  display: block;
+  top: $navbar-height * -1;
+}
