@@ -1,9 +1,26 @@
 /* Space out content a bit */
-html {
-  body {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header, footer {
+  @extend .navbar-default;
+
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Hide spip admin menu */
+#spip-admin {
+  display: none;
 }
 
 /* For inpage invisible anchors */

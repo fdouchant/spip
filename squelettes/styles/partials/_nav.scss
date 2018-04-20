@@ -1,5 +1,9 @@
 /* Override nav settings */
-.navbar-text a {
+.navbar-footer-col {
+  @include navbar-vertical-align($line-height-computed);
+}
+
+.navbar-text a, .navbar-footer-col a {
   color: $fabrice-blue;
   &:hover {
     color: white;
