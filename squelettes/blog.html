@@ -6,7 +6,7 @@
             <div class="visible-md visible-lg">
                 <label>Pick a category</label>
                 <BOUCLE_mots1(MOTS){id_groupe=1}>
-                <a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]"
+                <a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]"
                    class="btn btn-xs [(#TITRE|=={#ENV{titre_mot}}|?{"btn-primary","btn-default"})]">#TITRE</a>
                 </BOUCLE_mots1>
             </div>
@@ -18,17 +18,37 @@
                 </button>
                 <ul class="dropdown-menu">
                     <BOUCLE_mots2(MOTS){id_groupe=1}>
-                    <li><a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]">#TITRE</a></li>
+                    <li><a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a></li>
                     </BOUCLE_mots2>
                 </ul>
             </div>
         </div>
         <div id="blog-menu-links" class="col-xs-4">
             <a href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
-            <a href="#" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="#" title="Search" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a href="#" title="Subscribe"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
         </div>
     </nav>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="searchModal" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="#URL_PAGE{blog,lang=en}" method="get">
+                    <input type="hidden" name="page" value="blog">
+                    <input type="hidden" name="lang" value="en">
+                    <div class="input-group">
+                        <input type="text" name="recherche" class="form-control" placeholder="Keywords..." autofocus>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" value="Submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -72,7 +92,8 @@
 
     <!-- Articles -->
     <div class="row">
-        <BOUCLEall(ARTICLES){id_rubrique=5}{lang}{titre_mot ?}{par date_modif}{inverse}>
+        <Ball>
+        <BOUCLEall(ARTICLES){id_rubrique=5}{lang}{titre_mot ?}{recherche ?}{par points}{par date_modif}{inverse}>
         <div class="col-xs-6 col-md-3">
             <article class="panel panel-blog">
                 <header class="panel-heading">
@@ -80,7 +101,7 @@
                     Le <time datetime="[(#DATE_MODIF|affdate{'Y-m-d'})]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time> par Fabrice
                     <div>
                         <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
-                        <a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]" class="badge">#TITRE</a>
+                        <a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]" class="badge">#TITRE</a>
                         </BOUCLE_articlemots>
                     </div>
                 </header>
@@ -95,6 +116,13 @@
             </article>
         </div>
         </BOUCLEall>
+        </Ball>
+        <div class="alert alert-danger">
+            <strong>Error:</strong>
+            [(#ENV{titre_mot}|?{"No article found for category '" #ENV{titre_mot} "'",""})]
+            [(#ENV{recherche}|?{"No article found for keywords '" #ENV{recherche} "'",""})]
+        </div>
+        <//Ball>
         <!--<div class="col-xs-6 col-md-3">-->
             <!--<article class="panel panel-blog">-->
                 <!--<header class="panel-heading">-->
