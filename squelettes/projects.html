@@ -1,37 +1,35 @@
 ﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
 <div id="projects" class="container">
     #SET{filter, #ENV{id_rubrique, all}}
-    <BOUCLEall
-            (ARTICLES){id_rubrique IN 3,4}{lang}{par date_modif}{inverse}{si #GET{filter}|=={all}}>
-        <div class="col-md-6">
-            <div class="projects">
-                <div class="projects-heading">
-                    <h1><a href='[(#URL_ARTICLE|parametre_url{lang,#LANG})]'>#TITRE <span
-                            class="pull-right glyphicon glyphicon-share-alt"></span></a></h1>
-                    <h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
-                    </h2>
-                </div>
-                <div class="projects-body">
-                    #DESCRIPTIF
-                </div>
+    <BOUCLEall(ARTICLES){id_rubrique IN 3,4}{lang}{par date_modif}{inverse}{si #GET{filter}|=={all}}>
+    <div class="col-md-6">
+        <div class="projects">
+            <div class="projects-heading">
+                <h1><a href='[(#URL_ARTICLE|parametre_url{lang,#LANG})]'>#TITRE <span
+                        class="pull-right glyphicon glyphicon-share-alt"></span></a></h1>
+                <h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
+                </h2>
+            </div>
+            <div class="projects-body">
+                #DESCRIPTIF
             </div>
         </div>
+    </div>
     </BOUCLEall>
-    <BOUCLEn
-            (ARTICLES){id_rubrique=#GET{filter}|explode{','}}{lang}{par date_modif}{inverse}{si #GET{filter}|!={all}}>
-        <div class="col-md-6">
-            <div class="projects">
-                <div class="projects-heading">
-                    <h1><a href='[(#URL_ARTICLE|parametre_url{lang,#LANG})]'>#TITRE <span
-                            class="pull-right glyphicon glyphicon-share-alt"></span></a></h1>
-                    <h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
-                    </h2>
-                </div>
-                <div class="projects-body">
-                    #DESCRIPTIF
-                </div>
+    <BOUCLEn(ARTICLES){id_rubrique=#GET{filter}|explode{','}}{lang}{par date_modif}{inverse}{si #GET{filter}|!={all}}>
+    <div class="col-md-6">
+        <div class="projects">
+            <div class="projects-heading">
+                <h1><a href='[(#URL_ARTICLE|parametre_url{lang,#LANG})]'>#TITRE <span
+                        class="pull-right glyphicon glyphicon-share-alt"></span></a></h1>
+                <h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
+                </h2>
+            </div>
+            <div class="projects-body">
+                #DESCRIPTIF
             </div>
         </div>
+    </div>
     </BOUCLEn>
 </div>
 <INCLURE{fond=footer, lang}{self=#SELF}>

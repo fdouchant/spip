@@ -1,15 +1,30 @@
 ﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
 <div id="blog-menu" class="container-fluid">
     <nav class="row">
-        <div id="blog-menu-categories" class="col-md-8">
-            <label>Pick a category</label>
-            <a href="#" class="btn btn-xs btn-default">Project Management</a>
-            <a href="#" class="btn btn-xs btn-default">Architecture</a>
-            <a href="#" class="btn btn-xs btn-default">Management</a>
-            <a href="#" class="btn btn-xs btn-default">Tools</a>
+        <div id="blog-menu-categories" class="col-xs-8">
+            <!-- for medium device and more -->
+            <div class="visible-md visible-lg">
+                <label>Pick a category</label>
+                <BOUCLE_mots1(MOTS){id_groupe=1}>
+                <a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]"
+                   class="btn btn-xs [(#TITRE|=={#ENV{titre_mot}}|?{"btn-primary","btn-default"})]">#TITRE</a>
+                </BOUCLE_mots1>
+            </div>
+
+            <!-- for small device and less -->
+            <div class="btn-group hidden-md hidden-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    [(#ENV{titre_mot,'Pick a category'})] <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <BOUCLE_mots2(MOTS){id_groupe=1}>
+                    <li><a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]">#TITRE</a></li>
+                    </BOUCLE_mots2>
+                </ul>
+            </div>
         </div>
-        <div id="blog-menu-links" class="col-md-4">
-            <a href="#" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <div id="blog-menu-links" class="col-xs-4">
+            <a href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a href="#" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a href="#" title="Subscribe"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
         </div>
@@ -23,17 +38,15 @@
             <div id="quote-carousel" class="carousel slide" data-ride="carousel">
                 <!-- Bottom Carousel Indicators -->
                 <ol class="carousel-indicators">
-                    <BOUCLEn
-                    (BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
+                    <BOUCLE_quotes_indicators(BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
                     <li data-target="#quote-carousel" data-slide-to="#COMPTEUR_BOUCLE"
                         class="[(#COMPTEUR_BOUCLE|=={1}|?{'active',''})]"></li>
-                    </BOUCLEn>
+                    </BOUCLE_quotes_indicators>
                 </ol>
 
                 <!-- Carousel Slides / Quotes -->
                 <div class="carousel-inner" role="listbox">
-                    <BOUCLEm
-                    (BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
+                    <BOUCLE_quotes(BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
                     <div class="item [(#COMPTEUR_BOUCLE|=={1}|?{'active',''})]">
                         <blockquote>
                             <div class="media">
@@ -51,7 +64,7 @@
                             </div>
                         </blockquote>
                     </div>
-                    </BOUCLEm>
+                    </BOUCLE_quotes>
                 </div>
             </div>
         </div>
@@ -59,132 +72,134 @@
 
     <!-- Articles -->
     <div class="row">
+        <BOUCLEall(ARTICLES){id_rubrique=5}{lang}{titre_mot ?}{par date_modif}{inverse}>
         <div class="col-xs-6 col-md-3">
             <article class="panel panel-blog">
                 <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <h1><a href="#URL_ARTICLE">#TITRE</a></h1>
+                    Le <time datetime="[(#DATE_MODIF|affdate{'Y-m-d'})]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time> par Fabrice
                     <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
+                        <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
+                        <a href="[(#URL_PAGE|parametre_url{'titre_mot',#TITRE})]" class="badge">#TITRE</a>
+                        </BOUCLE_articlemots>
                     </div>
                 </header>
                 <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
+                    <a href="#URL_ARTICLE">
+                        <img style="max-height: 100%; max-width: 100%" src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
                     </a>
                 </section>
                 <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                    [(#DESCRIPTIF|textebrut)] <a href="#URL_ARTICLE">Continue...</a>
                 </section>
             </article>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <article class="panel panel-blog">
-                <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
-                    <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
-                    </div>
-                </header>
-                <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="http://www.my.dvdrwinfo.net/images/what-is-enterprise-architecture-1-enterprise-it-architecture-467-x-312.jpg" alt="Linux">
-                    </a>
-                </section>
-                <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
-                </section>
-            </article>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <article class="panel panel-blog">
-                <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
-                    <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
-                    </div>
-                </header>
-                <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="https://www.certyou.com/i/actualites/7/agile.png" alt="Linux">
-                    </a>
-                </section>
-                <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
-                </section>
-            </article>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <article class="panel panel-blog">
-                <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
-                    <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
-                    </div>
-                </header>
-                <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="https://ressources.blogdumoderateur.com/2013/10/excel.png" alt="Linux">
-                    </a>
-                </section>
-                <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
-                </section>
-            </article>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <article class="panel panel-blog">
-                <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
-                    <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
-                    </div>
-                </header>
-                <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
-                    </a>
-                </section>
-                <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
-                </section>
-            </article>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <article class="panel panel-blog">
-                <header class="panel-heading">
-                    <h1><a href="#">Les gestion de projets Agile</a></h1>
-                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
-                    <div>
-                        <span class="badge">Category 1</span>
-                        <span class="badge">Category 2</span>
-                    </div>
-                </header>
-                <section class="panel-body">
-                    <a href="#">
-                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
-                    </a>
-                </section>
-                <section class="panel-footer">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                    a fringilla justo vehicula. <a href="#">Continue...</a>
-                </section>
-            </article>
-        </div>
+        </BOUCLEall>
+        <!--<div class="col-xs-6 col-md-3">-->
+            <!--<article class="panel panel-blog">-->
+                <!--<header class="panel-heading">-->
+                    <!--<h1><a href="#">Les gestion de projets Agile</a></h1>-->
+                    <!--Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice-->
+                    <!--<div>-->
+                        <!--<span class="badge">Category 1</span>-->
+                        <!--<span class="badge">Category 2</span>-->
+                    <!--</div>-->
+                <!--</header>-->
+                <!--<section class="panel-body">-->
+                    <!--<a href="#">-->
+                        <!--<img style="max-height: 100%; max-width: 100%" src="http://www.my.dvdrwinfo.net/images/what-is-enterprise-architecture-1-enterprise-it-architecture-467-x-312.jpg" alt="Linux">-->
+                    <!--</a>-->
+                <!--</section>-->
+                <!--<section class="panel-footer">-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,-->
+                    <!--a fringilla justo vehicula. <a href="#">Continue...</a>-->
+                <!--</section>-->
+            <!--</article>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6 col-md-3">-->
+            <!--<article class="panel panel-blog">-->
+                <!--<header class="panel-heading">-->
+                    <!--<h1><a href="#">Les gestion de projets Agile</a></h1>-->
+                    <!--Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice-->
+                    <!--<div>-->
+                        <!--<span class="badge">Category 1</span>-->
+                        <!--<span class="badge">Category 2</span>-->
+                    <!--</div>-->
+                <!--</header>-->
+                <!--<section class="panel-body">-->
+                    <!--<a href="#">-->
+                        <!--<img style="max-height: 100%; max-width: 100%" src="https://www.certyou.com/i/actualites/7/agile.png" alt="Linux">-->
+                    <!--</a>-->
+                <!--</section>-->
+                <!--<section class="panel-footer">-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,-->
+                    <!--a fringilla justo vehicula. <a href="#">Continue...</a>-->
+                <!--</section>-->
+            <!--</article>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6 col-md-3">-->
+            <!--<article class="panel panel-blog">-->
+                <!--<header class="panel-heading">-->
+                    <!--<h1><a href="#">Les gestion de projets Agile</a></h1>-->
+                    <!--Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice-->
+                    <!--<div>-->
+                        <!--<span class="badge">Category 1</span>-->
+                        <!--<span class="badge">Category 2</span>-->
+                    <!--</div>-->
+                <!--</header>-->
+                <!--<section class="panel-body">-->
+                    <!--<a href="#">-->
+                        <!--<img style="max-height: 100%; max-width: 100%" src="https://ressources.blogdumoderateur.com/2013/10/excel.png" alt="Linux">-->
+                    <!--</a>-->
+                <!--</section>-->
+                <!--<section class="panel-footer">-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,-->
+                    <!--a fringilla justo vehicula. <a href="#">Continue...</a>-->
+                <!--</section>-->
+            <!--</article>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6 col-md-3">-->
+            <!--<article class="panel panel-blog">-->
+                <!--<header class="panel-heading">-->
+                    <!--<h1><a href="#">Les gestion de projets Agile</a></h1>-->
+                    <!--Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice-->
+                    <!--<div>-->
+                        <!--<span class="badge">Category 1</span>-->
+                        <!--<span class="badge">Category 2</span>-->
+                    <!--</div>-->
+                <!--</header>-->
+                <!--<section class="panel-body">-->
+                    <!--<a href="#">-->
+                        <!--<img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">-->
+                    <!--</a>-->
+                <!--</section>-->
+                <!--<section class="panel-footer">-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,-->
+                    <!--a fringilla justo vehicula. <a href="#">Continue...</a>-->
+                <!--</section>-->
+            <!--</article>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6 col-md-3">-->
+            <!--<article class="panel panel-blog">-->
+                <!--<header class="panel-heading">-->
+                    <!--<h1><a href="#">Les gestion de projets Agile</a></h1>-->
+                    <!--Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice-->
+                    <!--<div>-->
+                        <!--<span class="badge">Category 1</span>-->
+                        <!--<span class="badge">Category 2</span>-->
+                    <!--</div>-->
+                <!--</header>-->
+                <!--<section class="panel-body">-->
+                    <!--<a href="#">-->
+                        <!--<img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">-->
+                    <!--</a>-->
+                <!--</section>-->
+                <!--<section class="panel-footer">-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,-->
+                    <!--a fringilla justo vehicula. <a href="#">Continue...</a>-->
+                <!--</section>-->
+            <!--</article>-->
+        <!--</div>-->
     </div>
 </div>
 <INCLURE{fond=footer, lang}{self=#SELF}>
