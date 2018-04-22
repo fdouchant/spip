@@ -1,0 +1,14 @@
+/* Panels */
+
+.panel-blog {
+  @include panel-variant($fabrice-dark-blue, white, $fabrice-dark-blue, $fabrice-blue);
+
+  img.media-object {
+    max-height: 64px;
+    max-width: 64px;
+  }
+}
+
+.panel-sidebar {
+  @include panel-variant($fabrice-grey, white, $fabrice-grey, $fabrice-dark-grey);
+}

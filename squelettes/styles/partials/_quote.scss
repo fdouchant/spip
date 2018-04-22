@@ -1,0 +1,30 @@
+/* Inspired by http://bootsnipp.com/snippets/featured/responsive-quote-carousel */
+
+#quote-carousel {
+  min-height: 100px;
+}
+
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators {
+  display: none; // hide them
+}
+
+.item blockquote {
+  box-shadow: none;
+  border-left: none;
+  font-size: 16px;
+  margin: 0;
+
+  img {
+    margin-bottom: 0px;
+    max-height:50px;
+    max-width: 50px;
+  }
+
+  p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+  }
+}

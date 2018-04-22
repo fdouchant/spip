@@ -13,27 +13,6 @@ header, footer {
 
 main {
   flex: 1 0 auto;
-
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Blockquote */
-blockquote {
-  box-shadow: 2px 2px 15px #ccc;
-
-  &::before {
-    content: "\201C";
-
-    font-family: Georgia, serif;
-    font-size: 60px;
-    font-weight: bold;
-    color: $fabrice-grey;
-  }
-
-  footer {
-    background-color: white;
-  }
 }
 
 /* Hide spip admin menu */

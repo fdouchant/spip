@@ -1,4 +1,9 @@
 /* Space out content a bit */
+#projects {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .projects {
   @extend .panel;
   @extend .panel-default;

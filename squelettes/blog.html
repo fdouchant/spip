@@ -1,37 +1,79 @@
-﻿﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
-    <div class="container-fluid">
-        <blockquote>
-            La quote
-            <footer>La personne</footer>
-        </blockquote>
+﻿﻿
+<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
+<div class="container-fluid">
+
+    <div class='row'>
+        <div class="col-md-8 col-md-offset-2">
+            <div id="quote-carousel" class="carousel slide" data-ride="carousel">
+                <!-- Bottom Carousel Indicators -->
+                <ol class="carousel-indicators">
+                    <BOUCLEn
+                    (BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
+                    <li data-target="#quote-carousel" data-slide-to="#COMPTEUR_BOUCLE"
+                        class="[(#COMPTEUR_BOUCLE|=={1}|?{'active',''})]"></li>
+                    </BOUCLEn>
+                </ol>
+
+                <!-- Carousel Slides / Quotes -->
+                <div class="carousel-inner" role="listbox">
+                    <BOUCLEm
+                    (BREVES){id_rubrique=7}{lang}{par hasard}{0,5}>
+                    <div class="item [(#COMPTEUR_BOUCLE|=={1}|?{'active',''})]">
+                        <blockquote>
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#URL_SITE" title="[(#NOM_SITE|textebrut)]" target="_blank">
+                                        <img class="img-circle" src="/squelettes/images/quotes/[(#NOM_SITE|textebrut)].jpg">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <p>[(#TEXTE|textebrut)]</p>
+                                    <small>
+                                        <a href="#URL_SITE" title="[(#NOM_SITE|textebrut)]" target="_blank">[(#NOM_SITE|textebrut)]</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                    </BOUCLEm>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <div class="row">
-            <div class="col-md-9 col-md-push-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">article titre</div>
-                    <div class="panel-body">article description</div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">article titre</div>
-                    <div class="panel-body">article description</div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">article titre</div>
-                    <div class="panel-body">article description</div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">article titre</div>
-                    <div class="panel-body">article description</div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">article titre</div>
-                    <div class="panel-body">article description</div>
+            <div class="col-md-3">
+                <div class="panel panel-sidebar">
+                    <div class="panel-heading">Menu</div>
+                    <div class="panel-body">Body Menu</div>
                 </div>
             </div>
 
-            <div class="col-md-3 col-md-pull-9">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">ma sidebar</div>
-                    <div class="panel-body">contenu sidebar</div>
+            <div class="col-md-9">
+                <div class="panel panel-blog">
+                    <div class="panel-heading">
+                       Article titre
+                        <div class="pull-right">
+                            <span class="badge">Category 1</span>
+                            <span class="badge">Category 2</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="http://www.ide14.fr/wp-content/uploads/2016/06/Tux.svg_.png" alt="Linux">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                                a fringilla justo vehicula. Fusce placerat facilisis rhoncus. Donec pulvinar orci at scelerisque
+                                suscipit. Vivamus id laoreet metus. Nunc commodo rutrum accumsan. Maecenas pellentesque laoreet neque,
+                                vel suscipit nisl vestibulum euismod. Sed venenatis mollis orci, eget.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer small">Le 27.04.2017 par @Fabrice</div>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 $fabrice-blue: rgb(79,129,189);
 $fabrice-dark-blue: rgb(37,64,97);
 $fabrice-grey: rgb(64,64,64);
+$fabrice-dark-grey: rgb(2, 2, 2);
 
 // Bootstrap
 
@@ -30,3 +31,8 @@ $headings-color: $fabrice-dark-blue;
 $link-color: $fabrice-blue;
 $link-hover-color: $fabrice-dark-blue;
 $link-hover-decoration: underline;
+
+// quote-carousel
+$quote-carousel-color: $fabrice-grey;
+$quote-carousel-light-color: rgb(204, 204, 204);
+$quote-carousel-dark-color: $fabrice-dark-grey;
