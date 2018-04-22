@@ -1,0 +1,11 @@
+Configuration site :
+- contenu du site
+- multilinguisme (langue par défaut pour rubriques)
+
+Mise à jour des informations :
+- articles "Coordonnées" et "Contact" "à la poubelle"
+- update des article "A props" et "About" : supprimer les certifications
+
+Mise à jour des rubriques :
+- renommer les rubriques et leurs liens
+- ajouter les descriptifs de rubriques

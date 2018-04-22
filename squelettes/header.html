@@ -12,7 +12,6 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/lib/animate.css/animate.css" />
-    <link rel="stylesheet" href="/lib/jquery-colorbox/example2/colorbox.css" />
     <!-- endbower -->
 
     <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
@@ -38,14 +37,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="nav-bar-menu">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">
-                    <multi>[fr]À propos[en]About</multi>
+                <li><a href="#URL_PAGE{blog,lang=#LANG}">
+                    <multi>[fr]Blog[en]Blog</multi>
                 </a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <multi>[fr]Mes Projets[en]My Projects</multi>
+                        <multi>[fr]Projets[en]Projects</multi>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
@@ -67,6 +66,10 @@
                         </li>
                     </ul>
                 </li>
+
+                <li><a href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">
+                    <multi>[fr]À propos[en]About</multi>
+                </a></li>
             </ul>
 
             <p class="navbar-text">

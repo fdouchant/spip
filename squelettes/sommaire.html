@@ -1,7 +1,45 @@
 ﻿﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
 	<BOUCLEn(ARTICLES){id_rubrique=1}{lang}>
 		<h1>#TITRE</h1>
-		#TEXTE
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object img-circle" src="/squelettes/images/Fabrice_Douchant.jpg" style="width: 128px; height: 128px;" alt="Fabrice Douchant">
+            </div>
+            <div class="media-body">#TEXTE</div>
+        </div>
 	</BOUCLEn>
-	<a href="squelettes/images/Fabrice_Douchant.jpg" class="fancybox"><multi>[fr]Ma photo[en]My picture</multi></a>
+
+    <h1>Certifications</h1>
+    <div class="row">
+        <div class="col-xs-6 col-md-1">
+            <img height="50" class="img-circle" src="/squelettes/images/PMI.png" alt="CAPM">
+            <div class="caption">
+                <h5><a href="http://www.pmi.org/certification/certified-associate-project-management-capm.aspx" target="_blank">PMI® CAPM®</a></h5>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <img height="50" class="img-circle" src="/squelettes/images/SCRUM.png" alt="SCRUM">
+            <div class="caption">
+                <h5><a href="https://www.scrum.org/Assessments/Professional-Scrum-Master-Assessments/PSM-I-Assessment" target="_blank">Professional Scrum Master I</a></h5>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <img height="50" class="img-circle" src="/squelettes/images/ITIL.png" alt="ITIL">
+            <div class="caption">
+                <h5><a href="https://www.axelos.com/qualifications/itil-qualifications/itil-foundation-level" target="_blank">ITIL® Fundation</a></h5>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <img height="50" class="img-circle" src="/squelettes/images/LSSGB.png" alt="LSSGB">
+            <div class="caption">
+                <h5><a href="http://www.iassc.org/six-sigma-certification/green-belt-certification/" target="_blank">IASSC Lean Six Sigma Green Belt</a></h5>
+            </div>
+        </div>
+    </div>
+
+    <h1><multi>[fr]Coordonnées[en]Contact</multi></h1>
+    <address>
+        <strong><multi>[fr]Adresse : [en]Address: </multi></strong>1004 Lausanne</br>
+        <strong><multi>[fr]Mail : [en]Email: </multi></strong><a href="mailto:fabrice.douchant%5Bat%5Dgmail%5B.%5Dcom">fabrice.douchant[at]gmail[.]com</a>
+    </address>
 <INCLURE{fond=footer, lang}{self=#SELF}>
