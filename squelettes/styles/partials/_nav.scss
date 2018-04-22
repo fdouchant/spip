@@ -5,6 +5,7 @@
 
 .navbar-text a, .navbar-footer-col a {
   color: $fabrice-blue;
+  text-decoration: none;
   &:hover {
     color: white;
     text-decoration: none;

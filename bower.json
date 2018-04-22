@@ -2,11 +2,11 @@
   "name": "fabrice",
   "private": true,
   "dependencies": {
-    "jquery": "2.2.0",
-    "bootstrap-sass": "~3.3.5",
-    "font-awesome": "~4.5.0",
-    "textillate": "~0.4.0",
-    "jquery-colorbox": "colorbox#~1.6.3"
+    "jquery": "^3.2.1",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "textillate": "^0.4.0",
+    "jquery-colorbox": "^1.6.4"
   },
   "overrides": {
     "jquery": {

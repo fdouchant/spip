@@ -1,9 +1,25 @@
-﻿﻿
-<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
-<div class="container-fluid">
+﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
+<div id="blog-menu" class="container-fluid">
+    <nav class="row">
+        <div id="blog-menu-categories" class="col-md-8">
+            <label>Pick a category</label>
+            <a href="#" class="btn btn-xs btn-default">Project Management</a>
+            <a href="#" class="btn btn-xs btn-default">Architecture</a>
+            <a href="#" class="btn btn-xs btn-default">Management</a>
+            <a href="#" class="btn btn-xs btn-default">Tools</a>
+        </div>
+        <div id="blog-menu-links" class="col-md-4">
+            <a href="#" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="#" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="#" title="Subscribe"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
+        </div>
+    </nav>
+</div>
 
+<div class="container">
+    <!-- Quotes -->
     <div class='row'>
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-3">
             <div id="quote-carousel" class="carousel slide" data-ride="carousel">
                 <!-- Bottom Carousel Indicators -->
                 <ol class="carousel-indicators">
@@ -41,41 +57,134 @@
         </div>
     </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <div class="panel panel-sidebar">
-                    <div class="panel-heading">Menu</div>
-                    <div class="panel-body">Body Menu</div>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-                <div class="panel panel-blog">
-                    <div class="panel-heading">
-                       Article titre
-                        <div class="pull-right">
-                            <span class="badge">Category 1</span>
-                            <span class="badge">Category 2</span>
-                        </div>
+    <!-- Articles -->
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
                     </div>
-                    <div class="panel-body">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="http://www.ide14.fr/wp-content/uploads/2016/06/Tux.svg_.png" alt="Linux">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
-                                a fringilla justo vehicula. Fusce placerat facilisis rhoncus. Donec pulvinar orci at scelerisque
-                                suscipit. Vivamus id laoreet metus. Nunc commodo rutrum accumsan. Maecenas pellentesque laoreet neque,
-                                vel suscipit nisl vestibulum euismod. Sed venenatis mollis orci, eget.
-                            </div>
-                        </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
                     </div>
-                    <div class="panel-footer small">Le 27.04.2017 par @Fabrice</div>
-                </div>
-            </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="http://www.my.dvdrwinfo.net/images/what-is-enterprise-architecture-1-enterprise-it-architecture-467-x-312.jpg" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
+                    </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="https://www.certyou.com/i/actualites/7/agile.png" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
+                    </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="https://ressources.blogdumoderateur.com/2013/10/excel.png" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
+                    </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <article class="panel panel-blog">
+                <header class="panel-heading">
+                    <h1><a href="#">Les gestion de projets Agile</a></h1>
+                    Le <time datetime="2017-04-27" >27.04.2017</time> par Fabrice
+                    <div>
+                        <span class="badge">Category 1</span>
+                        <span class="badge">Category 2</span>
+                    </div>
+                </header>
+                <section class="panel-body">
+                    <a href="#">
+                        <img style="max-height: 100%; max-width: 100%" src="http://www.gifsanimes.fr/images/t/tux/tux-gifs-animes-7900876.gif" alt="Linux">
+                    </a>
+                </section>
+                <section class="panel-footer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies ipsum at dui lobortis,
+                    a fringilla justo vehicula. <a href="#">Continue...</a>
+                </section>
+            </article>
         </div>
     </div>
+</div>
 <INCLURE{fond=footer, lang}{self=#SELF}>
