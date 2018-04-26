@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: http://ogp.me/ns#">
 <head>
     <title>Fabrice Douchant</title>
     <link rel="shortcut icon" href="#CHEMIN{images/favicon.ico}" type="image/x-icon"/>
@@ -8,6 +8,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fabrice Douchant Personal Website"/>
     <meta name="theme-color" content="#404040"/>
+
+    <!-- Open Graph Protocol -->
+    <BOUCLEmeta(ARTICLES){id_article}{lang}>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fdouchant" />
+    <meta name="twitter:creator" content="@fdouchant" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="#TITRE" />
+    <meta property='og:description' content="[(#DESCRIPTIF|textebrut)]"/>
+    <meta property="og:url" content="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG})]" />
+    <meta property="og:image" content="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG})]"
+      },
+      "headline": "#TITRE",
+      "image": {
+        "@type": "ImageObject",
+        "url": "[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]"
+      },
+      "datePublished": "[(#DATE|date_iso)]",
+      "dateModified": "[(#DATE_MODIF|date_iso)]",
+      "description": "[(#DESCRIPTIF|textebrut)]"
+    }
+    </script>
+    </BOUCLEmeta>
+
+    <!-- Sitelinks Searchbox -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "#URL_SITE_SPIP",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "[(#URL_PAGE{recherche}|abs_url)]&lang=#LANG&recherche={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
     <!-- bower:css -->
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />

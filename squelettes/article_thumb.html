@@ -1,9 +1,15 @@
 <BOUCLEn(ARTICLES){id_article}>
+#SET{hashtags, #ARRAY}
+<BOUCLE_hashtags(MOTS){id_article}>
+#SET{hashtags, #GET{hashtags}|push{#TITRE}}
+</BOUCLE_hashtags>
 <article class="panel panel-blog">
     <header class="panel-heading">
         <h1><a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a></h1>
-        <time datetime="[(#DATE_MODIF|affdate{'Y-m-d'})]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>
+        <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.y'})]</time>
         | <a href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]" class="white-hover">[(#LESAUTEURS|supprimer_tags)]</a>
+        | <a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" class="white-hover"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+          <a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" title="Share on Twitter" class="white-hover"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
         <div>
             <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
             <a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]" class="badge">#TITRE</a>
