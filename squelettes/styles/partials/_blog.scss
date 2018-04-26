@@ -5,27 +5,27 @@
   color: white;
   border-top: thin solid white;
 
-  label {
-    font-weight: normal;
-    margin-right: 0.5rem;
-  }
+  h2 {
+    @media (max-width: $screen-xs-min) {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
 
-  .btn {
-    margin: 0 0.25rem;
+    color: white;
+    font-size: 2rem;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
   }
 
   &-links {
-    @media (min-width: $screen-xs-max) {
-      text-align: right;
-    }
+    text-align: right;
 
     a {
+      @extend .white-hover;
+
       margin: 0 0.5rem;
       font-size: 2rem;
-
-      &:hover {
-        color: white;
-      }
     }
   }
 }
@@ -43,9 +43,9 @@
       margin: 0 0 10px 0;
       font-size: 2rem;
 
-      a, a:active, a:hover, a:visited {
+      a {
+        @extend .white-hover;
         color: white;
-        text-decoration: none;
       }
     }
 
@@ -53,6 +53,10 @@
     .badge {
       font-size: 1rem;
     }
+  }
+
+  .panel-body {
+    padding: 5px;
   }
 
   .panel-footer {

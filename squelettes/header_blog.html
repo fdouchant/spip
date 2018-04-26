@@ -1,0 +1,84 @@
+<div id="blog-menu" class="container-fluid">
+    <nav class="row">
+        <!-- Title -->
+        <div class="col-md-6 col-md-push-3">
+            <h2>IT General Blog - <em>how to deal with IT from A to Z</em></h2>
+        </div>
+        <!-- Categories -->
+        <div id="blog-menu-categories" class="col-md-3 col-xs-6 col-md-pull-6">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    [(#ENV{titre_mot,'Pick a category'})] <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <BOUCLE_mots2(MOTS){id_groupe=1}>
+                    <li><a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a></li>
+                    </BOUCLE_mots2>
+                </ul>
+            </div>
+        </div>
+        <!-- Links -->
+        <div id="blog-menu-links" class="col-md-3 col-xs-6">
+            <a href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="#" title="Search in articles" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="#" title="Subscribe" data-toggle="modal" data-target="#newsletterModal"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
+        </div>
+    </nav>
+</div>
+
+<!-- Search modal -->
+<div class="modal fade" id="searchModal" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="#URL_PAGE{blog,lang=en}" method="get">
+                    <input type="hidden" name="page" value="blog">
+                    <input type="hidden" name="lang" value="en">
+                    <div class="input-group">
+                        <input type="text" name="recherche" class="form-control" placeholder="Keywords..." autofocus>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" value="Submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Newsletter modal -->
+<div class="modal fade" id="newsletterModal" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">Subscribe to the mailing list</div>
+            <div class="modal-body">
+                <form action="//douchant.us15.list-manage.com/subscribe/post?u=80e53c021c3460b83aa32fa0d&amp;id=728a485f5c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <div class="form-group">
+                        <label for="mce-EMAIL">Email</label>
+                        <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-FNAME">First Name</label>
+                        <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME">
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-LNAME">Last Name</label>
+                        <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_80e53c021c3460b83aa32fa0d_728a485f5c" tabindex="-1" value="">
+                    </div>
+                    <div class="clear">
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End mc_embed_signup-->

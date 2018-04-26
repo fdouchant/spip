@@ -1,0 +1,64 @@
+/* Forum */
+#formulaire_forum {
+
+  /* Overall */
+
+  background-color: $fabrice-very-light-grey;
+  border-radius: 5px;
+  padding: 20px;
+
+  @media (max-width: $screen-xs-min) {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .editer {
+    /* Set bootstrap form styling */
+
+    @extend .form-group;
+
+    .text {
+      @extend .form-control;
+    }
+
+    textarea {
+      @extend .form-control;
+      height: 15rem; // override textarea rows
+    }
+  }
+
+  // set error in textarea
+  .erreur {
+    @extend .has-error;
+  }
+
+  .erreur_message {
+    @extend .text-danger;
+  }
+
+  /* Preview */
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .comment-meta {
+    display: none;
+  }
+
+  .submit {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  /* Who are you */
+
+  // force text after fields
+  div.saisie_session_nom > label::after, div.saisie_session_email > label::after {
+    content: " (Required)";
+  }
+
+  /* Your post */
+
+}

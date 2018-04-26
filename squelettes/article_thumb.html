@@ -1,0 +1,22 @@
+<BOUCLEn(ARTICLES){id_article}>
+<article class="panel panel-blog">
+    <header class="panel-heading">
+        <h1><a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a></h1>
+        <time datetime="[(#DATE_MODIF|affdate{'Y-m-d'})]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>
+        | <a href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]" class="white-hover">[(#LESAUTEURS|supprimer_tags)]</a>
+        <div>
+            <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
+            <a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]" class="badge">#TITRE</a>
+            </BOUCLE_articlemots>
+        </div>
+    </header>
+    <section class="panel-body">
+        <a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">
+            <img style="max-height: 100%; max-width: 100%" src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
+        </a>
+    </section>
+    <section class="panel-footer">
+        [(#DESCRIPTIF|textebrut)] <a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">Continue...</a>
+    </section>
+</article>
+</BOUCLEn>

@@ -1,23 +1,79 @@
 /* Space out content a bit */
-.article {
+.article-container {
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.article-heading {
-  > h1 {
-    text-align: center;
+.article-header {
+  background-color: $fabrice-light-grey;
+  text-align: center;
+  padding: 20px 0;
+
+  &-title {
+    color: white;
+    text-shadow: 2px 2px 4px $fabrice-grey;
+    margin: 0;
   }
 
-  > h2 {
-    @extend .panel;
-    @extend .panel-default;
-    @extend .panel-body;
+  &-links {
+    margin: 5px 0 10px 0;
 
-    font-size: $font-size-base;
+    a {
+      color: $fabrice-dark-blue;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+
+  &-img {
+    img {
+      max-width: 100%;
+    }
   }
 }
 
 .article-body {
+  margin-top: 20px;
 }
 
-.article-attachments {
+.article-footer {
+  border-left: 6px solid $fabrice-dark-grey;
+  background-color: $fabrice-very-light-grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  @media (max-width: $screen-xs-min) {
+    margin: 10px;
+  }
+}
+
+.article-similar {
+  background-color: $fabrice-light-grey;
+
+  h3 {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    color: $fabrice-dark-blue;
+  }
+}
+
+.article-comments {
+  h3 {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    color: $fabrice-grey;
+  }
+}
+
+.article-comment {
+  padding: 5px;
+  margin-top: 10px;
+  border-top: thin solid $fabrice-very-light-grey;
+
+  &-header {
+    color: $fabrice-dark-grey;
+    margin-bottom: 5px;
+  }
 }

@@ -26,3 +26,13 @@ a.anchor {
   display: block;
   top: $navbar-height * -1;
 }
+
+/* News classes */
+a.white-hover {
+  color: $fabrice-blue;
+  text-decoration: none;
+  &:hover, &:active {
+    color: white;
+    text-decoration: none;
+  }
+}

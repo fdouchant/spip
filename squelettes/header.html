@@ -49,18 +49,18 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
                         <li>
-                            <a href="[(#URL_PAGE{projects,lang=#LANG}|parametre_url{'id_rubrique',3})]">
+                            <a href="#URL_PAGE{projects,lang=#LANG}&rubrique_list=3">
                                 <multi>[fr]En cours[en]Ongoing</multi>
                             </a>
                         </li>
                         <li>
-                            <a href="[(#URL_PAGE{projects,lang=#LANG}|parametre_url{'id_rubrique',4})]">
+                            <a href="#URL_PAGE{projects,lang=#LANG}&rubrique_list=4">
                                 <multi>[fr]Archives[en]Archives</multi>
                             </a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#URL_PAGE{projects,lang=#LANG}">
+                            <a href="#URL_PAGE{projects,lang=#LANG}&rubrique_list=3,4">
                                 <multi>[fr]Tous[en]All</multi>
                             </a>
                         </li>
@@ -77,9 +77,9 @@
                     <img height="20" alt="<multi>[fr]English[en]Français</multi>"
                          src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
                 </a>
-                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social"><i
+                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social white-hover"><i
                         class="fa fa-envelope-o"></i></a>
-                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social"><i
+                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social white-hover"><i
                         class="fa fa-linkedin-square"></i></a>
             </p>
         </div><!-- /.navbar-collapse -->

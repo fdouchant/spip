@@ -1,15 +1,7 @@
 /* Override nav settings */
 .navbar-footer-col {
   @include navbar-vertical-align($line-height-computed);
-}
-
-.navbar-text a, .navbar-footer-col a {
-  color: $fabrice-blue;
-  text-decoration: none;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+  color: white;
 }
 
 a.navbar-social {
