@@ -17,7 +17,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="#TITRE" />
     <meta property='og:description' content="[(#DESCRIPTIF|textebrut)]"/>
-    <meta property="og:url" content="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG})]" />
+    <meta property="og:url" content="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG})]" />
     <meta property="og:image" content="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" />
 
     <!-- Structured data -->
@@ -27,7 +27,7 @@
       "@type": "NewsArticle",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG})]"
+        "@id": "[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG})]"
       },
       "headline": "#TITRE",
       "image": {
@@ -49,7 +49,7 @@
       "url": "#URL_SITE_SPIP",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "[(#URL_PAGE{recherche}|abs_url)]&lang=#LANG&recherche={search_term_string}",
+        "target": "[(#URL_PAGE{recherche}|url_absolue)]&lang=#LANG&recherche={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }

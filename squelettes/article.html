@@ -15,8 +15,8 @@
 					<i class="fa fa-eye" aria-hidden="true"></i> (#VISITES)
 					| Posted <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
 					[(#DATE_MODIF|affdate{'d.m.Y'}|!={#DATE|affdate{'d.m.Y'}}|oui) (updated on <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>)]
-					| <a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-					<a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+					| <a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+					<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 				</div>
 				<div class="article-header-img">
 					<img src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
@@ -35,8 +35,8 @@
 			</div>
 			<div class="article-footer-links">
 				Share this article :
-				<a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-				<a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+				<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+				<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 			</div>
 		</section>
 		<section class="article-similar">

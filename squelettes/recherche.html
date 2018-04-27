@@ -18,7 +18,7 @@
             </h2>
             <ul class="spip">
                 <BOUCLE_articles
-                        (ARTICLES) {recherche} {lang} {!par points} {pagination}>
+                        (ARTICLES) {id_rubrique=5} {recherche} {lang} {!par points} {pagination}>
                     <li><a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a></li>
                 </BOUCLE_articles>
             </ul>
@@ -26,92 +26,39 @@
         </div>
     </B_articles>
 
-    [(#REM) Rubriques trouvees ]
-    <B_rubriques>
-        <div class="menu menu_rubriques">
+    [(#REM) Projets en cours trouves ]
+    <B_projets>
+        <div class="menu menu_projets">
             #ANCRE_PAGINATION
             <h2>
-                <:rubriques:> (#GRAND_TOTAL)
+                <multi>[fr]Projets en cours[en]Ongoing projects</multi> (#GRAND_TOTAL)
             </h2>
             <ul class="spip">
-                <BOUCLE_rubriques
-                        (RUBRIQUES) {recherche} {lang} {!par points} {pagination 5}>
-                    <li><a href="#URL_RUBRIQUE">#TITRE</a></li>
-                </BOUCLE_rubriques>
+                <BOUCLE_projets
+                        (ARTICLES) {id_rubrique=3} {recherche} {lang} {!par points} {pagination}>
+                    <li><a href="[(#URL_ARTICLE|parametre_url{page,project}|parametre_url{lang,#LANG})]">#TITRE</a></li>
+                </BOUCLE_projets>
             </ul>
             [<p class="pagination">(#PAGINATION)</p>]
         </div>
-    </B_rubriques>
+    </B_projets>
 
-    [(#REM) Mots-cles trouves ]
-    <B_mots>
-        <div class="menu menu_mots">
+    [(#REM) Projets archives trouves ]
+    <B_archives>
+        <div class="menu menu_projets">
             #ANCRE_PAGINATION
             <h2>
-                <:mots_clefs:> (#GRAND_TOTAL)
+                <multi>[fr]Projets archivés[en]Project archives</multi> (#GRAND_TOTAL)
             </h2>
             <ul class="spip">
-                <BOUCLE_mots
-                        (MOTS) {recherche} {!par points} {pagination 5}>
-                    <li><a href="#URL_MOT">#TITRE</a></li>
-                </BOUCLE_mots>
+                <BOUCLE_archives
+                        (ARTICLES) {id_rubrique=4} {recherche} {lang} {!par points} {pagination}>
+                    <li><a href="[(#URL_ARTICLE|parametre_url{page,project}|parametre_url{lang,#LANG})]">#TITRE</a></li>
+                </BOUCLE_archives>
             </ul>
             [<p class="pagination">(#PAGINATION)</p>]
         </div>
-    </B_mots>
-
-    [(#REM) Breves trouvees ]
-    <B_breves>
-        <div class="menu menu_breves">
-            #ANCRE_PAGINATION
-            <h2>
-                <:breves:breves:> (#GRAND_TOTAL)
-            </h2>
-            <ul class="spip">
-                <BOUCLE_breves
-                        (BREVES) {lang} {recherche} {!par points} {pagination 5}>
-                    <li><a href="#URL_BREVE">#TITRE</a></li>
-                </BOUCLE_breves>
-            </ul>
-            [<p class="pagination">(#PAGINATION)</p>]
-        </div>
-    </B_breves>
-
-    [(#REM) Messages trouves ]
-    <B_messages>
-        <div class="menu menu_comments">
-            #ANCRE_PAGINATION
-            <h2>
-                <:messages_forum:> (#GRAND_TOTAL)
-            </h2>
-            <ul class="spip">
-                <BOUCLE_messages
-                        (FORUMS?) {recherche} {!par points} {pagination 5}>
-                    [
-                    <li><a href="#URL_FORUM" [ title="(#TITRE|attribut_html|couper{80})" ]>(#TEXTE|couper{80})</a></li>
-                    ]
-                </BOUCLE_messages>
-            </ul>
-            [<p class="pagination">(#PAGINATION)</p>]
-        </div>
-    </B_messages>
-
-    [(#REM) Sites web trouves ]
-    <B_sites>
-        <div class="menu menu_sites">
-            #ANCRE_PAGINATION
-            <h2>
-                <:sites_web:> (#GRAND_TOTAL)
-            </h2>
-            <ul class="spip">
-                <BOUCLE_sites
-                        (SITES) {recherche} {!par points} {pagination 5}>
-                    <li><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></li>
-                </BOUCLE_sites>
-            </ul>
-            [<p class="pagination">(#PAGINATION)</p>]
-        </div>
-    </B_sites>
+    </B_archives>
 
 </div><!--.content-->
 </div><!--.wrapper-->
