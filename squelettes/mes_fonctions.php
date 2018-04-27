@@ -20,4 +20,14 @@ function twitter_share_url($article_url, $article_text='', $article_hashtags='')
     return $url;
 }
 
+function image_width($image_url)
+{
+    return getimagesize($image_url)[0];
+}
+
+function image_height($image_url)
+{
+    return getimagesize($image_url)[1];
+}
+
 ?>

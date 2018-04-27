@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr" prefix="og: http://ogp.me/ns#">
-<head>
-    <title>Fabrice Douchant</title>
+<html lang="#LANG" prefix="og: http://ogp.me/ns#">
     <link rel="shortcut icon" href="#CHEMIN{images/favicon.ico}" type="image/x-icon"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Fabrice Douchant Personal Website"/>
+    <meta http-equiv="Content-Language" content="#LANG"/>
+    <meta charset="#CHARSET"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#404040"/>
 
     <!-- Open Graph Protocol -->
     <BOUCLEmeta(ARTICLES){id_article}{lang}>
+    <meta name="author" content="Fabrice Douchant"/>
+    <meta name="copyright" content="Fabrice Douchant"/>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@fdouchant" />
     <meta name="twitter:creator" content="@fdouchant" />
@@ -32,14 +33,34 @@
       "headline": "#TITRE",
       "image": {
         "@type": "ImageObject",
-        "url": "[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]"
+        "url": "[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]",
+        "width": "[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue|image_width)]",
+        "height": "[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue|image_height)]"
       },
       "datePublished": "[(#DATE|date_iso)]",
       "dateModified": "[(#DATE_MODIF|date_iso)]",
-      "description": "[(#DESCRIPTIF|textebrut)]"
+      "description": "[(#DESCRIPTIF|textebrut)]",
+      "author": {
+        "@type": "Person",
+        "name": "Fabrice Douchant"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fabrice Douchant",
+        "logo": "#URL_SITE_SPIP/squelettes/images/Fabrice_Douchant.jpg"
+      }
     }
     </script>
+
+    <title>Fabrice Douchant : #TITRE</title>
+    <meta name="description" content="[(#DESCRIPTIF|textebrut)]"/>
+    <meta name="keywords" content="#SOUSTITRE"/>
     </BOUCLEmeta>
+    </Bmeta>
+    <title>Fabrice Douchant : IT General Blog, Projects, About</title>
+    <meta name="description" content="Personal website including IT Blog : Software Architecture, IT Management, Project Management and Tools. Current and previous software projects. About page"/>
+    <meta name="keywords" content="Software Architecture, Best Practices, Cloud, SOA, MicroServices, IT Management, ITIL, Lean, Leadership, Recruitment, Team Building, Project Management, Waterfall, PMI, Hermes, Agile, SCRUM, Lean, Kanban, Tools, Office, Outlook, Excel, Project Management, Proactive"
+    <//Bmeta>
 
     <!-- Sitelinks Searchbox -->
     <script type="application/ld+json">
