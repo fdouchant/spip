@@ -1,0 +1,21 @@
+<BOUCLE_un_article(ARTICLES){id_article}>
+	<item[ xml:lang="(#LANG)"]>
+		<title>[(#TITRE|supprimer_tags|texte_backend)]</title>
+		<link>[(#URL_ARTICLE|url_absolue|texte_backend)]</link>
+		<pubDate>[(#DATE|date_iso)]</pubDate>
+		[<guid isPermaLink="true">(#URL_ARTICLE|url_absolue|texte_backend)</guid>]
+		[<dc:date>(#DATE|date_iso)</dc:date>]
+		<dc:format>text/html</dc:format>
+		[<dc:language>(#LANG)</dc:language>]
+		[<dc:creator>(#LESAUTEURS|supprimer_tags|texte_backend)</dc:creator>]
+		<BOUCLE_mots_rss(MOTS){id_article}>
+			[<dc:subject>(#TITRE|texte_backend)</dc:subject>]
+		</BOUCLE_mots_rss>
+		<B_mots_mf>
+		<BOUCLE_mots_mf(MOTS){id_article}>
+		[<category>(#TITRE|texte_backend)</category>]
+		</BOUCLE_mots_mf>
+		<description>[(#INTRODUCTION|textebrut)]</description>
+		<media:content url="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" medium="image"/>
+	</item>
+</BOUCLE_un_article>
