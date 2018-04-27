@@ -14,7 +14,7 @@
 				<div class="article-header-links">
 					<i class="fa fa-eye" aria-hidden="true"></i> (#VISITES)
 					| Posted <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
-					[(#DATE_MODIF|!={DATE}|?{'',' '}) | <time datetime="[(#DATE_MODIF|date_iso)]" >Updated [(#DATE_MODIF|affdate{'d.m.Y'})]</time>]
+					[(#DATE_MODIF|affdate{'d.m.Y'}|!={#DATE|affdate{'d.m.Y'}}|oui) (updated on <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>)]
 					| <a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 					<a href="[(#URL_ARTICLE|abs_url|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#GET{hashtags}|implode{','}})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 				</div>
@@ -44,7 +44,7 @@
 				<B_similaires>
 				<h3>Articles similaires</h3>
 				<div class="row">
-				<BOUCLE_similaires(ARTICLES){id_rubrique=5}{lang}{recherche #DESCRIPTIF}{par popularite}{inverse}{0,3}>
+				<BOUCLE_similaires(ARTICLES){id_rubrique=5}{lang}{recherche #DESCRIPTIF}{par popularite}{inverse}{0,4}>
 					<div class="col-xs-6 col-md-3">
 					<INCLURE{fond=article_thumb,id_article}>
 					</div>
