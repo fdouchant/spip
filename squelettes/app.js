@@ -1,3 +1,14 @@
+/* JS imports */
+require("jquery");
+require("js-cookie");
+require("lettering.js");
+require("textillate");
+require("jquery-colorbox");
+require("bootstrap-sass");
+
+/* CSS imports */
+require("./styles/main.scss");
+
 jQuery(function ($) {
 
     // set the carousel options

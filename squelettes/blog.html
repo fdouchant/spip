@@ -41,12 +41,19 @@
     </div>
 
     <!-- Articles -->
+    <!-- FIXME issue with cards, should use flexbox ! -->
     <div class="row">
         <Ball>
         <BOUCLEall(ARTICLES){id_rubrique=5}{lang}{titre_mot ?}{recherche ?}{!par points}{par date_modif}{inverse}{pagination 4}>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-12 col-md-6">
         <INCLURE{fond=article_thumb,id_article}>
         </div>
+            <div class="col-xs-12 col-md-6">
+                <INCLURE{fond=article_thumb,id_article}>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <INCLURE{fond=article_thumb,id_article}>
+            </div>
         </BOUCLEall>
         <div id="pagination" class="col-md-12">
             #PAGINATION

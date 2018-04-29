@@ -2,9 +2,10 @@
 @import "modules/_variables";
 @import "modules/_mixins";
 
-// bower:scss
-@import "lib/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Play');
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 // Components
 @import "partials/base";
