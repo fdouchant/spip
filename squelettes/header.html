@@ -85,11 +85,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand tlt" data-in-effect="flipInX" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">/* Fabrice Douchant */</a>
+        <a class="navbar-brand tlt" data-in-effect="flipInX" href="#URL_SITE_SPIP">/* Fabrice Douchant */</a>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-text">
-                <a class="nav-link-shortcut responsive-element" href="[(#URL_SITE_SPIP|parametre_url{lang,[(#LANG|=={fr}|?{'en','fr'})]})]">
+                <a class="nav-link-shortcut responsive-element" href="[(#LANG|=={fr}|?{#URL_SITE_SPIP,[(#URL_PAGE{about,lang=#LANG})]})]">
                     <img height="20" alt="<multi>[fr]English[en]Français</multi>"
                          src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
                 </a>
@@ -100,10 +100,10 @@
             </div>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#URL_PAGE{blog,lang=en}"><multi>[fr]Blog[en]Blog</multi></a>
+                    <a class="nav-link" href="#URL_SITE_SPIP"><multi>[fr]Blog[en]Blog</multi></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]"><multi>[fr]À propos[en]About</multi></a>
+                    <a class="nav-link" href="#URL_PAGE{about,lang=#LANG}"><multi>[fr]À propos[en]About</multi></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

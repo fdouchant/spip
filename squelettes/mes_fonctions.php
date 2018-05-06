@@ -30,4 +30,14 @@ function image_height($image_url)
     return getimagesize($image_url)[1];
 }
 
+function pretty_number($number)
+{
+    if ($number > 1000000)
+        return round(($number / 1000000), 1).' M';
+    else if ($number > 1000)
+        return round(($number / 1000), 1).' k';
+
+    return $number;
+}
+
 ?>

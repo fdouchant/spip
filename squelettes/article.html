@@ -7,7 +7,7 @@
 		<header class="article-header">
 			<h1 class="article-header-title">#TITRE</h1>
 			<div class="article-header-links">
-				<i class="fa fa-eye" aria-hidden="true"></i> (#VISITES)
+				<i class="fa fa-eye" aria-hidden="true"></i> [(#VISITES|pretty_number)]
 				| Posted <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
 				[(#DATE_MODIF|affdate{'d.m.Y'}|!={#DATE|affdate{'d.m.Y'}}|oui) (updated on <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>)]
 				| <a class="responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
@@ -24,7 +24,7 @@
 			<div class="article-footer-tags">
 				Tags :
 				<BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}{", "}>
-				<a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
+				<a href="[(#URL_SITE_SPIP|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
 				</BOUCLE_articlemots>
 			</div>
 			<div class="article-footer-links">
@@ -47,22 +47,22 @@
 			</div>
 		</section>
 		</B_similaires>
-		<section class="article-comments">
-			<B_commentaires>
-			<h3>Comments</h3>
-			<BOUCLE_commentaires(FORUMS){id_article}>
-			<div class="article-comment">
-				<div class="article-comment-header">
-					#AUTEUR on <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y H:i'})]</time>
-				</div>
-				<div class="article-comment-body">
-					#TEXTE
-				</div>
-			</div>
-			</BOUCLE_commentaires>
-			</B_commentaires>
-			[(#FORMULAIRE_FORUM{#SELF})]
-		</section>
+		<!--<section class="article-comments">-->
+			<!--<B_commentaires>-->
+			<!--<h3>Comments</h3>-->
+			<!--<BOUCLE_commentaires(FORUMS){id_article}>-->
+			<!--<div class="article-comment">-->
+				<!--<div class="article-comment-header">-->
+					<!--#AUTEUR on <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y H:i'})]</time>-->
+				<!--</div>-->
+				<!--<div class="article-comment-body">-->
+					<!--#TEXTE-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--</BOUCLE_commentaires>-->
+			<!--</B_commentaires>-->
+			<!--[(#FORMULAIRE_FORUM{#SELF})]-->
+		<!--</section>-->
 	</article>
 </div>
 </BOUCLEn>

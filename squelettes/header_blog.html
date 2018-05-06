@@ -12,14 +12,14 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <BOUCLE_mots2(MOTS){id_groupe=1}>
-                    <a class="dropdown-item" href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
+                    <a class="dropdown-item" href="[(#URL_SITE_SPIP|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
                     </BOUCLE_mots2>
                 </div>
             </div>
         </div>
         <!-- Links -->
         <div class="col-6 col-md-3 order-md-3 blog-menu-links">
-            <a class="responsive-element" href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a class="responsive-element" href="#URL_SITE_SPIP" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Search in articles" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Subscribe" data-toggle="modal" data-target="#newsletterModal"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
         </div>
@@ -31,8 +31,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <form action="#URL_PAGE{blog,lang=en}" method="get">
-                    <input type="hidden" name="page" value="blog">
+                <form action="#URL_SITE_SPIP" method="get">
                     <input type="hidden" name="lang" value="en">
                     <div class="input-group">
                         <input type="text" class="form-control" name="recherche" placeholder="Keywords..." autofocus>

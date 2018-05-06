@@ -11,7 +11,7 @@
               <a class="card-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
             <div>
                 <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
-                <a class="badge badge-pill badge-category" href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
+                <a class="badge badge-pill badge-category" href="[(#URL_SITE_SPIP|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
                 </BOUCLE_articlemots>
             </div>
         </div>
