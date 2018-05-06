@@ -1,8 +1,27 @@
 const path = require('path');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const bundleAnalyzer = new BundleAnalyzerPlugin({
+    analyzerMode: 'static'
+});
+
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpackProvide = new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    Popper: "popper.js",
+    'window.jQuery': "jquery",
+    Tether:'tether',
+    Cookies: "js-cookie"
+});
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const cleanWebpack = new CleanWebpackPlugin(['dist']);
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const miniCssExtract = new MiniCssExtractPlugin({
+    filename: "style.css",
+});
 
 module.exports = {
     context: path.resolve(__dirname, 'squelettes'),
@@ -18,13 +37,11 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        { loader: "css-loader", options: { sourceMap: true }},
-                        { loader: "sass-loader", options: { sourceMap: true }
-                    }]
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ],
             },
             // the file-loader emits files.
             {
@@ -33,26 +50,21 @@ module.exports = {
             },
         ]
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "all"
+                }
+            }
+        }
+    },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            'window.jQuery': "jquery",
-            Tether:'tether',
-            Cookies: "js-cookie"
-        }),
-        // new BundleAnalyzerPlugin({
-        //     analyzerMode: 'static'
-        // }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.js',
-            minChunks(module, count) {
-                var context = module.context;
-                return context && context.indexOf('node_modules') >= 0;
-            },
-        }),
-        new ExtractTextPlugin('style.css'),
+        //bundleAnalyzer,
+        cleanWebpack,
+        webpackProvide,
+        miniCssExtract
         ]
 };

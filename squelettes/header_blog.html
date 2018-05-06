@@ -1,11 +1,11 @@
 <div id="blog-menu" class="container-fluid">
     <nav class="row">
         <!-- Title -->
-        <div class="col-12 col-md-6 push-md-3 text-center">
+        <div class="col-12 col-md-6 order-md-2 text-center">
             <h2 class="blog-menu-title">IT General Blog - <span class="font-italic">Manage IT from A to Z</span></h2>
         </div>
         <!-- Categories -->
-        <div class="col-6 col-md-3 pull-md-6">
+        <div class="col-6 col-md-3 order-md-1">
             <div class="dropdown">
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     [(#ENV{titre_mot,'Pick a category'})]
@@ -18,7 +18,7 @@
             </div>
         </div>
         <!-- Links -->
-        <div class="col-6 col-md-3 blog-menu-links">
+        <div class="col-6 col-md-3 order-md-3 blog-menu-links">
             <a class="responsive-element" href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Search in articles" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Subscribe" data-toggle="modal" data-target="#newsletterModal"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
