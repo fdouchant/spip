@@ -12,10 +12,6 @@
 .blog-menu-links {
   @extend .text-right;
 
-  @include media-breakpoint-down(sm) {
-    font-size: 1.5rem;
-  }
-
   > a {
     @extend .mr-2;
 

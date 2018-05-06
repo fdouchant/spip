@@ -8,6 +8,8 @@ a.navbar-brand.tlt:hover {
 
 .nav-link-shortcut {
   @extend .mr-1, .mr-md-3;
+  @extend .responsive-element;
+
   color: white;
 
   @include hover-focus {
