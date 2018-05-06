@@ -1,34 +1,31 @@
 /* Inspired by http://bootsnipp.com/snippets/featured/responsive-quote-carousel */
 
-#quote-carousel {
-  min-height: 100px;
+.quote {
+  @extend .media, .my-3;
 }
 
-/* Changes the position of the indicators */
-#quote-carousel .carousel-indicators {
-  display: none; // hide them
+.quote-image {
+  @extend .d-flex, .align-self-center, .mr-3;
+  height: 100px;
+  width: 100px;
+
+  > img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
-.item blockquote {
-  box-shadow: none;
-  border-left: none;
-  font-size: 16px;
-  margin: 0;
+.quote-block {
+  @extend .media-body;
 
-  img {
-    margin-bottom: 0px;
-    max-height:50px;
-    max-width: 50px;
-  }
+  > p {
+    @extend .mb-1;
 
-  p:before {
-    content: "\f10d";
-    font-family: 'Fontawesome';
-    float: left;
-    margin-right: 10px;
-  }
-
-  p {
-    margin: 0px;
+    &:before {
+      content: "\f10d";
+      font-family: 'Fontawesome';
+      float: left;
+      margin-right: 10px;
+    }
   }
 }

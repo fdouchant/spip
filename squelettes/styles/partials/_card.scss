@@ -1,0 +1,41 @@
+.card {
+  @extend .mb-3;
+}
+
+.card-columns {
+  @include media-breakpoint-down(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(xs) {
+    column-count: 1;
+  }
+}
+
+.card-header {
+  background: $fabrice-dark-blue;
+}
+
+.card-subtitle {
+  color: $fabrice-light-grey;
+}
+
+.card-text {
+  @extend .text-justify, .mb-2;
+}
+
+.card-title-link {
+  @include link-color-all(white);
+}
+
+.card-link-author {
+  @include link-color-all($fabrice-blue);
+}
+
+.card-link-social {
+  @include link-color-all($fabrice-light-blue);
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.25rem;
+  }
+}
+

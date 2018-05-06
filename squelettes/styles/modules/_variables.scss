@@ -7,35 +7,25 @@ $fabrice-light-grey: rgb(154, 154, 154);
 $fabrice-dark-grey: rgb(2, 2, 2);
 $fabrice-very-light-grey: rgb(218, 218, 218);
 
-// Bootstrap
+// Navbar
+$navbar-light-color: white;
+$navbar-light-hover-color: $fabrice-blue;
+$navbar-light-active-color: white;
+$navbar-light-disabled-color: $fabrice-light-blue;
 
-// blockquote
-$blockquote-border-color: $fabrice-dark-blue;
-$blockquote-small-color: $fabrice-blue;
+// Dropdowns
+$dropdown-link-hover-color: $fabrice-blue;
 
-// navbar
-$navbar-default-bg: $fabrice-grey;
-$navbar-default-brand-color: white;
-$navbar-default-brand-hover-color: $fabrice-blue;
-$navbar-default-color: white;
-$navbar-default-link-color: white;
-$navbar-default-link-hover-color: $fabrice-blue;
-$navbar-default-link-active-color: white;
-
-// fonts
-$font-size-base: 16px;
+// Fonts
 $font-family-base: 'Play', sans-serif;
-$icon-font-path: '/lib/bootstrap-sass/assets/fonts/bootstrap/';
 
-// headings
+// Card
+$card-spacer-x: 1rem;
+
+// Headings
 $headings-color: $fabrice-dark-blue;
 
-// links
+// Links
 $link-color: $fabrice-blue;
 $link-hover-color: $fabrice-dark-blue;
 $link-hover-decoration: underline;
-
-// quote-carousel
-$quote-carousel-color: $fabrice-grey;
-$quote-carousel-light-color: rgb(204, 204, 204);
-$quote-carousel-dark-color: $fabrice-dark-grey;

@@ -4,18 +4,12 @@ require("js-cookie");
 require("lettering.js");
 require("textillate");
 require("jquery-colorbox");
-require("bootstrap-sass");
+require("bootstrap");
 
 /* CSS imports */
 require("./styles/main.scss");
 
 jQuery(function ($) {
-
-    // set the carousel options
-    $('#quote-carousel').carousel({
-        pause: true,
-        interval: 6000,
-    });
 
     // activate textillate
     $('.tlt').textillate();

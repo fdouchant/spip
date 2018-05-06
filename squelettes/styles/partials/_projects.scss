@@ -1,32 +1,3 @@
-/* Space out content a bit */
 #projects {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.projects {
-  @extend .panel;
-  @extend .panel-default;
-
-  @media (min-width: $screen-xs-max) {
-    min-height: 200px;
-  }
-}
-
-.projects-heading {
-  @extend .panel-heading;
-
-  h1 {
-    font-size: $font-size-base + 4px;
-    margin: 0 0 5px 0;
-  }
-
-  h2 {
-    font-size: $font-size-base;
-    margin: 0;
-  }
-}
-
-.projects-body {
-  @extend .panel-body;
+  @extend .mt-3;
 }

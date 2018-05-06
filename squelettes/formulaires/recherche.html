@@ -1,13 +1,13 @@
-<form action="[(#ENV{action})]" method="get" class="form form-inline text-right">
+<form class="form-inline" action="[(#ENV{action})]" method="get">
 	[(#ENV{action}|form_hidden)]
 	[<input type="hidden" name="lang" value="(#ENV{lang})" />]
 	<div class="input-group">
-		<input type="[(#HTML5|?{search,text})]"
-			   class="form-control input-sm" name="recherche"
+		<input class="form-control form-control-sm" name="recherche"
+			   type="text"
 			   id="#ENV{_id_champ}"[ value="(#ENV{recherche})"]
 			   placeholder="<multi>[fr]Rechercher sur tout le site[en]Looking in all website</multi>"/>
 		<span class="input-group-btn">
-			<button type="submit" class="btn btn-default btn-sm"><multi>[fr]Recherche[en]Search</multi></button>
+			<button class="btn btn-secondary btn-sm" type="button"><multi>[fr]Recherche[en]Search</multi></button>
 		</span>
 	</div>
 </form>

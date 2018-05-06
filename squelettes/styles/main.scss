@@ -2,20 +2,22 @@
 @import "modules/_variables";
 @import "modules/_mixins";
 
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css?family=Play');
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 
 // Components
 @import "partials/base";
-@import "partials/nav";
 @import "partials/projects";
+@import "partials/nav";
+@import "partials/card";
 @import "partials/project";
 @import "partials/quote";
-@import "partials/blog";
 @import "partials/article";
 @import "partials/commentaires";
+@import "partials/header_blog";
+@import "partials/sommaire";
 
 // Modules
 

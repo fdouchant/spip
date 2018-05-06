@@ -1,23 +1,26 @@
-/* Space out content a bit */
-.project {
+#project {
+  @extend .mb-2;
 }
 
-.project-heading {
-  > h1 {
-    text-align: center;
+.project-header {
+  @extend .my-5;
+  text-align: center;
+}
+
+.project-subtitle {
+  font-size: $font-size-h5;
+}
+
+.project-block {
+  h2 {
+    @extend .mt-4, .mb-2, .ml-2;
   }
 
-  > h2 {
-    @extend .panel;
-    @extend .panel-default;
-    @extend .panel-body;
-
-    font-size: $font-size-base;
+  h3 {
+    font-size: $font-size-h4;
   }
-}
 
-.project-body {
-}
-
-.project-attachments {
+  pre {
+    @extend code; // for previous articles with <pre> instead of html5 <code>
+  }
 }

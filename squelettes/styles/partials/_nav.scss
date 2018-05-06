@@ -1,12 +1,17 @@
-/* Override nav settings */
-.navbar-footer-col {
-  @include navbar-vertical-align($line-height-computed);
-  color: white;
+.navbar {
+  background-color: $fabrice-grey;
 }
 
-a.navbar-social {
-  margin-left: 10px;
-  @media (max-width: $screen-xs-min) {
-    margin-left: 5px;
+a.navbar-brand.tlt:hover {
+  color: $fabrice-blue;
+}
+
+.nav-link-shortcut {
+  @extend .mr-1, .mr-md-3;
+  color: white;
+
+  @include hover-focus {
+    color: $fabrice-blue;
+    text-decoration: none;
   }
 }

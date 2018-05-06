@@ -1,65 +1,58 @@
-/* Space out content a bit */
-.article-container {
-  padding: 0;
-  margin-bottom: 20px;
-}
-
 .article-header {
+  @extend .container-fluid, .py-3;
   background-color: $fabrice-light-grey;
   text-align: center;
-  padding: 20px 0;
+}
 
-  &-title {
+.article-header-title {
+  color: white;
+  text-shadow: 2px 2px 4px $fabrice-grey;
+}
+
+.article-header-links {
+  margin: 5px 0 10px 0;
+
+  a {
+    color: $fabrice-dark-blue;
+  }
+  a:hover {
     color: white;
-    text-shadow: 2px 2px 4px $fabrice-grey;
-    margin: 0;
   }
+}
 
-  &-links {
-    margin: 5px 0 10px 0;
-
-    a {
-      color: $fabrice-dark-blue;
-    }
-    a:hover {
-      color: white;
-    }
-  }
-
-  &-img {
-    img {
-      max-width: 100%;
-    }
+.article-header-img {
+  img {
+    max-width: 100%;
   }
 }
 
 .article-body {
-  margin-top: 20px;
+  @extend .container, .mt-3;
 }
 
 .article-footer {
+  @extend .container, .py-2, .mb-3;
+
   border-left: 6px solid $fabrice-dark-grey;
   background-color: $fabrice-very-light-grey;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-
-  @media (max-width: $screen-xs-min) {
-    margin: 10px;
-  }
 }
 
 .article-similar {
+  @extend .py-1;
+
   background-color: $fabrice-light-grey;
 
   h3 {
+    @extend .py-2;
+
     text-align: center;
-    margin: 10px 0 20px 0;
     color: $fabrice-dark-blue;
   }
 }
 
 .article-comments {
+  @extend .container, .my-3;
+
   h3 {
     text-align: center;
     margin: 10px 0 20px 0;
@@ -71,9 +64,9 @@
   padding: 5px;
   margin-top: 10px;
   border-top: thin solid $fabrice-very-light-grey;
+}
 
-  &-header {
-    color: $fabrice-dark-grey;
-    margin-bottom: 5px;
-  }
+.article-comment-header {
+  color: $fabrice-dark-grey;
+  margin-bottom: 5px;
 }

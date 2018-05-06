@@ -1,19 +1,24 @@
 ﻿<INCLURE{fond=header, lang, url_switch_lang}{self=#SELF}>
 <div id="projects" class="container">
+    <div class="card-columns">
     <BOUCLEn(ARTICLES){id_rubrique IN #ENV{rubrique_list}|explode{','}}{lang}{par date_modif}{inverse}>
-    <div class="col-md-6">
-        <div class="projects">
-            <div class="projects-heading">
-                <h1><a href='[(#URL_ARTICLE|parametre_url{page,project}|parametre_url{lang,#LANG})]'>#TITRE <span
-                        class="pull-right glyphicon glyphicon-share-alt"></span></a></h1>
-                <h2>[(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
-                </h2>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    <a class="card-title-link" href='[(#URL_ARTICLE|parametre_url{page,project}|parametre_url{lang,#LANG})]'>#TITRE</a>
+                </h4>
+                <h6 class="card-subtitle">
+                    [(#DATE|affdate)] <span class="upd">(<multi>[fr]Mise à jour le[en]Upated on</multi> [(#DATE_MODIF|affdate)])</span>
+                </h6>
             </div>
-            <div class="projects-body">
-                #DESCRIPTIF
+            <div class="card-block">
+                <div class="card-text">
+                    [(#DESCRIPTIF|textebrut)]
+                </div>
+                <a class="card-link" href='[(#URL_ARTICLE|parametre_url{page,project}|parametre_url{lang,#LANG})]'><multi>[fr]Voir[en]More</multi></a>
             </div>
         </div>
-    </div>
     </BOUCLEn>
+    </div>
 </div>
 <INCLURE{fond=footer, lang}{self=#SELF}>

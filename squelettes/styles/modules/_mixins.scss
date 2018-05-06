@@ -1,0 +1,8 @@
+/* Link mixin */
+@mixin link-color-all($color, $text-decoration:none) {
+  color: $color;
+  &:visited, &:hover, &:active {
+    color: $color;
+    text-decoration: $text-decoration;
+  }
+}

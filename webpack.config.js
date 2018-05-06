@@ -38,6 +38,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
+            'window.jQuery': "jquery",
+            Tether:'tether',
             Cookies: "js-cookie"
         }),
         // new BundleAnalyzerPlugin({

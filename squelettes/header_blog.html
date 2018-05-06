@@ -1,24 +1,24 @@
 <div id="blog-menu" class="container-fluid">
     <nav class="row">
         <!-- Title -->
-        <div class="col-md-6 col-md-push-3">
-            <h2>IT General Blog - <em>Manage IT from A to Z</em></h2>
+        <div class="col-12 col-md-6 push-md-3 text-center">
+            <h2 class="blog-menu-title">IT General Blog - <span class="font-italic">Manage IT from A to Z</span></h2>
         </div>
         <!-- Categories -->
-        <div id="blog-menu-categories" class="col-md-3 col-xs-6 col-md-pull-6">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    [(#ENV{titre_mot,'Pick a category'})] <span class="caret"></span>
+        <div class="col-6 col-md-3 pull-md-6">
+            <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    [(#ENV{titre_mot,'Pick a category'})]
                 </button>
-                <ul class="dropdown-menu">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <BOUCLE_mots2(MOTS){id_groupe=1}>
-                    <li><a href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a></li>
+                    <a class="dropdown-item" href="[(#URL_PAGE{blog}|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
                     </BOUCLE_mots2>
-                </ul>
+                </div>
             </div>
         </div>
         <!-- Links -->
-        <div id="blog-menu-links" class="col-md-3 col-xs-6">
+        <div class="col-6 col-md-3 blog-menu-links">
             <a href="#URL_PAGE{blog,lang=en}" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a href="#" title="Search in articles" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a href="#" title="Subscribe" data-toggle="modal" data-target="#newsletterModal"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
@@ -35,7 +35,7 @@
                     <input type="hidden" name="page" value="blog">
                     <input type="hidden" name="lang" value="en">
                     <div class="input-group">
-                        <input type="text" name="recherche" class="form-control" placeholder="Keywords..." autofocus>
+                        <input type="text" class="form-control" name="recherche" placeholder="Keywords..." autofocus>
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit" value="Submit">Search</button>
                         </span>
@@ -51,8 +51,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 Subscribe to the mailing list
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form action="//douchant.us15.list-manage.com/subscribe/post?u=80e53c021c3460b83aa32fa0d&amp;id=728a485f5c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>

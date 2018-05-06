@@ -5,24 +5,22 @@
 <div class="article-container">
 	<article class="article">
 		<header class="article-header">
-			<div class="container">
-				<h1 class="article-header-title">#TITRE</h1>
-				<div class="article-header-links">
-					<i class="fa fa-eye" aria-hidden="true"></i> (#VISITES)
-					| Posted <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
-					[(#DATE_MODIF|affdate{'d.m.Y'}|!={#DATE|affdate{'d.m.Y'}}|oui) (updated on <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>)]
-					| <a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-					<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-				</div>
-				<div class="article-header-img">
-					<img src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
-				</div>
+			<h1 class="article-header-title">#TITRE</h1>
+			<div class="article-header-links">
+				<i class="fa fa-eye" aria-hidden="true"></i> (#VISITES)
+				| Posted <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
+				[(#DATE_MODIF|affdate{'d.m.Y'}|!={#DATE|affdate{'d.m.Y'}}|oui) (updated on <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.Y'})]</time>)]
+				| <a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+				<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+			</div>
+			<div class="article-header-img">
+				<img src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
 			</div>
 		</header>
-		<section class="container article-body">
+		<section class="article-body">
 			#TEXTE
 		</section>
-		<section class="container article-footer">
+		<section class="article-footer">
 			<div class="article-footer-tags">
 				Tags :
 				<BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}{", "}>
@@ -35,25 +33,25 @@
 				<a href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 			</div>
 		</section>
+		<B_similaires>
 		<section class="article-similar">
 			<div class="container">
-				<B_similaires>
-				<h3>Articles similaires</h3>
+				<h3>Similar articles</h3>
 				<div class="row">
-				<BOUCLE_similaires(ARTICLES){id_rubrique=5}{lang}{recherche #DESCRIPTIF}{par popularite}{inverse}{0,2}>
+				<BOUCLE_similaires(ARTICLES){id_rubrique=5}{lang}{recherche #DESCRIPTIF}{par popularite}{inverse}{0,2}{exclus}>
 					<div class="col-xs-12 col-md-6">
 					<INCLURE{fond=article_thumb,id_article}>
 					</div>
 				</BOUCLE_similaires>
 				</div>
-				</B_similaires>
 			</div>
 		</section>
-		<section class="container article-comments">
+		</B_similaires>
+		<section class="article-comments">
 			<B_commentaires>
 			<h3>Comments</h3>
 			<BOUCLE_commentaires(FORUMS){id_article}>
-			<div class="row article-comment">
+			<div class="article-comment">
 				<div class="article-comment-header">
 					#AUTEUR on <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y H:i'})]</time>
 				</div>
@@ -63,9 +61,7 @@
 			</div>
 			</BOUCLE_commentaires>
 			</B_commentaires>
-			<div class="row">
 			[(#FORMULAIRE_FORUM{#SELF})]
-			</div>
 		</section>
 	</article>
 </div>

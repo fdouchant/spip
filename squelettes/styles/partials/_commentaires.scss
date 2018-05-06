@@ -1,16 +1,9 @@
 /* Forum */
 #formulaire_forum {
-
-  /* Overall */
+  @extend .p-3;
 
   background-color: $fabrice-very-light-grey;
   border-radius: 5px;
-  padding: 20px;
-
-  @media (max-width: $screen-xs-min) {
-    margin: 5px;
-    padding: 10px;
-  }
 
   .editer {
     /* Set bootstrap form styling */
@@ -29,7 +22,7 @@
 
   // set error in textarea
   .erreur {
-    @extend .has-error;
+    // FIXME @extend .has-error;
   }
 
   .erreur_message {
