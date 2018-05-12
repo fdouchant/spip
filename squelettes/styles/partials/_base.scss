@@ -17,6 +17,12 @@ main {
   display: none;
 }
 
+// Images a 100%
+.spip_documents img {
+  max-width: 100%;
+  height: auto;
+}
+
 // Badge
 a.badge-category {
   @extend .py-1, .px-2;
