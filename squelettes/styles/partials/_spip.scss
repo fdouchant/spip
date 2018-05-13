@@ -1,0 +1,17 @@
+// Hide spip admin menu
+#spip-admin {
+  display: none;
+}
+
+// add bootstrap table style
+table.spip {
+  @extend .table;
+  @extend .table-hover;
+}
+
+// spip document images should be no more that 100%
+.spip_documents img {
+  max-width: 100%;
+  height: auto;
+}
+
