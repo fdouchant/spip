@@ -6,3 +6,12 @@
     text-decoration: $text-decoration;
   }
 }
+
+%article-image {
+  @extend .img-thumbnail;
+
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
