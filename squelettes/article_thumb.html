@@ -5,7 +5,7 @@
             <a class="card-title-link" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a>
         </h4>
         <div class="card-subtitle">
-            <time datetime="[(#DATE_MODIF|date_iso)]" >[(#DATE_MODIF|affdate{'d.m.y'})]</time>
+            <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.y'})]</time>
             | <a class="card-link-author" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">[(#LESAUTEURS|supprimer_tags)]</a>
             | <a class="card-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
               <a class="card-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
