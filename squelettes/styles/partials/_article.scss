@@ -28,6 +28,8 @@
 
 .article-body {
   @extend .container, .mt-3;
+
+  text-align: justify;
 }
 
 .article-footer {

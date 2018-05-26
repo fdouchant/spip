@@ -1,0 +1,31 @@
+summary {
+  @extend .card-header;
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+details {
+  @extend .card;
+
+  summary:before {
+    content: "+";
+    color: $fabrice-dark-grey;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  p, dl, img {
+    margin: 10px;
+  }
+
+  img {
+    @extend %article-image;
+  }
+}
+
+details[open] summary:before {
+  content: "-";
+  color: $fabrice-light-grey;
+}

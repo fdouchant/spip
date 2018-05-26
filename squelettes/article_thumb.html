@@ -1,14 +1,14 @@
 <BOUCLEn(ARTICLES){id_article}>
-<div class="card">
-    <div class="card-header">
-        <h4 coass="card-title">
-            <a class="card-title-link" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a>
+<div class="article_thumb">
+    <div class="article_thumb-header">
+        <h4 coass="article_thumb-title">
+            <a class="article_thumb-title-link" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">#TITRE</a>
         </h4>
-        <div class="card-subtitle">
+        <div class="article_thumb-subtitle">
             <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.y'})]</time>
-            | <a class="card-link-author" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">[(#LESAUTEURS|supprimer_tags)]</a>
-            | <a class="card-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-              <a class="card-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+            | <a class="article_thumb-link-author" href="[(#URL_SITE_SPIP|parametre_url{lang,#LANG})]">[(#LESAUTEURS|supprimer_tags)]</a>
+            | <a class="article_thumb-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+              <a class="article_thumb-link-social ml-1 responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
             <div>
                 <BOUCLE_articlemots(MOTS){id_article=#ID_ARTICLE}>
                 <a class="badge badge-pill badge-category" href="[(#URL_SITE_SPIP|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
@@ -16,13 +16,13 @@
             </div>
         </div>
     </div>
-    <a class="card-img" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">
+    <a class="article_thumb-img" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]">
         <img src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">
     </a>
-    <div class="card-body">
-        <div class="card-text">
-            [(#DESCRIPTIF|textebrut)]
-            <a class="card-link" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]"><i class="fa fa-eye" aria-hidden="true"></i> Continue</a>
+    <div class="article_thumb-body">
+        <div class="article_thumb-text">
+            #DESCRIPTIF
+            <a class="article_thumb-link" href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]"><i class="fa fa-eye" aria-hidden="true"></i> Continue</a>
         </div>
     </div>
 </div>
