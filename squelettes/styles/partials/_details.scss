@@ -16,12 +16,29 @@ details {
     margin-right: 5px;
   }
 
-  p, dl, img {
-    margin: 10px;
-  }
-
   img {
     @extend %article-image;
+  }
+}
+
+a.magnify-link {
+  display: block;
+  position: relative;
+
+  i.magnify-img {
+    @extend .fa, .fa-search;
+
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+.details-content {
+  margin: 10px;
+
+  p {
+    margin: 5px 0;
   }
 }
 

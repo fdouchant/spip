@@ -6,6 +6,7 @@ require("lettering.js");
 require("textillate");
 require("jquery-colorbox");
 require("bootstrap");
+require("ekko-lightbox");
 
 import Cookies from "js-cookie";
 
@@ -28,5 +29,11 @@ jQuery(function ($) {
             }
         }
     }, 5000);
+
+    // trigger lightbox
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
 
 });
