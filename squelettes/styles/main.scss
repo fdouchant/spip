@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
+@import "~bricklayer/src/bricklayer.scss";
 
 // Components
 @import "partials/base";
@@ -20,6 +21,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import "partials/sommaire";
 @import "partials/spip";
 @import "partials/details";
+@import "partials/bricklayer";
 
 // Modules
 

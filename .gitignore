@@ -11,6 +11,7 @@ squelettes/css/*
 squelettes-dist
 tmp
 COPYING.txt
+CHANGELOG.txt
 htaccess.txt
 index.php
 INSTALL.txt
@@ -18,3 +19,5 @@ npm-debug.log
 spip.php
 spip.png
 spip_loader.php
+*lock.json
+MAMP*

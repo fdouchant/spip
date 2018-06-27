@@ -7,6 +7,7 @@ require("textillate");
 require("jquery-colorbox");
 require("bootstrap");
 require("ekko-lightbox");
+let Bricklayer = require("bricklayer");
 
 import Cookies from "js-cookie";
 
@@ -35,5 +36,8 @@ jQuery(function ($) {
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+
+    // activate bricklayer
+    var bricklayer = new Bricklayer(document.querySelector('.bricklayer'));
 
 });

@@ -11,8 +11,8 @@ const webpackProvide = new webpack.ProvidePlugin({
     jQuery: "jquery",
     Popper: "popper.js",
     'window.jQuery': "jquery",
-    Tether:'tether',
-    Cookies: "js-cookie"
+    Tether: 'tether',
+    Cookies: "js-cookie",
 });
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');

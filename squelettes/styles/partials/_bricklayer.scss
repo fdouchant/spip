@@ -1,0 +1,10 @@
+.bricklayer-column-sizer {
+  width: 33.3% !important;
+
+  @include media-breakpoint-down(md) {
+    width: 50% !important;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100% !important;
+  }
+}

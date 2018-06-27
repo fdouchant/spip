@@ -2,17 +2,6 @@
   @extend .card, .mb-3;
 }
 
-.article_thumb-columns {
-  @extend .card-columns;
-
-  @include media-breakpoint-down(md) {
-    column-count: 2;
-  }
-  @include media-breakpoint-only(xs) {
-    column-count: 1;
-  }
-}
-
 .article_thumb-header {
   @extend .card-header;
 
