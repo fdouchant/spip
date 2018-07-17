@@ -29,3 +29,8 @@ $headings-color: $fabrice-dark-blue;
 $link-color: $fabrice-blue;
 $link-hover-color: $fabrice-dark-blue;
 $link-hover-decoration: underline;
+
+// custom breakpoints
+$custom-breakpoints: (
+  xxl: 1600px
+) !default;

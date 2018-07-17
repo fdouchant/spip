@@ -1,11 +1,11 @@
 <div id="blog-menu" class="container-fluid">
     <nav class="row">
         <!-- Title -->
-        <div class="col-12 col-md-6 order-md-2 text-center">
-            <h2 class="blog-menu-title">IT General Blog - <span class="font-italic">Manage IT from A to Z</span></h2>
+        <div class="blog-menu-title">
+            <h2>IT General Blog</h2>
         </div>
         <!-- Categories -->
-        <div class="col-6 col-md-3 order-md-1">
+        <div class="blog-menu-dropdown">
             <div class="dropdown">
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     [(#ENV{titre_mot,'Pick a category'})]
@@ -16,9 +16,18 @@
                     </BOUCLE_mots2>
                 </div>
             </div>
+            <form action="#URL_SITE_SPIP" method="get" class="d-none d-md-inline-block">
+                <input type="hidden" name="lang" value="en">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="recherche" placeholder="Search in articles" aria-label="Search in articles" aria-describedby="button-search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-light" type="submit" value="Submit" id="button-search">Go</button>
+                    </div>
+                </div>
+            </form>
         </div>
         <!-- Links -->
-        <div class="col-6 col-md-3 order-md-3 blog-menu-links">
+        <div class="blog-menu-links">
             <a class="responsive-element" href="#URL_SITE_SPIP" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Search in articles" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
             <a class="responsive-element" href="#" title="Subscribe" data-toggle="modal" data-target="#newsletterModal"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
