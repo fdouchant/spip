@@ -30,6 +30,10 @@
   @extend .container, .mt-3;
 
   text-align: justify;
+
+  h1, h2, h3, h4 {
+    margin-bottom: $headings-margin-bottom;
+  }
 }
 
 .article-footer {
