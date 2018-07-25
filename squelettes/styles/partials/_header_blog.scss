@@ -58,5 +58,9 @@
     @include hover-focus-active {
       color: white;
     }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
   }
 }

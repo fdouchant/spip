@@ -19,10 +19,3 @@ a.badge-category {
   @include link-color-all($fabrice-dark-blue);
   background-color: white;
 }
-
-// Responsive elements (image, text)
-.responsive-element {
-  @include media-breakpoint-down(md) {
-    font-size: 1.5rem;
-  }
-}
