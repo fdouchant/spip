@@ -38,3 +38,29 @@ blockquote {
     margin-right: 10px;
   }
 }
+
+q {
+  &:before {
+    content: "\201c";
+    font-weight: $font-weight-bold;
+    font-family: sans-serif;
+    margin-right: 2px;
+  }
+
+  &:after {
+    content: "\201d";
+    font-weight: $font-weight-bold;
+    font-family: sans-serif;
+    margin-left: 2px;
+  }
+
+  & + a {
+    &:before {
+      content: "(";
+    }
+
+    &:after {
+      content : ")";
+    }
+  }
+}
