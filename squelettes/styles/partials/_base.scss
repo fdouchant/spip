@@ -19,3 +19,22 @@ a.badge-category {
   @include link-color-all($fabrice-dark-blue);
   background-color: white;
 }
+
+blockquote {
+  padding-left: 1rem;
+  border-left: 7px solid $fabrice-dark-blue;
+  margin-bottom: 1rem;
+
+  &:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+  }
+
+  > footer:before {
+    content: "\2015";
+    float: left;
+    margin-right: 10px;
+  }
+}
