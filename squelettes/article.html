@@ -11,7 +11,7 @@
 				| Posted on <time datetime="[(#DATE|date_iso)]" >[(#DATE|affdate{'d.m.Y'})]</time>
 				[(#DATE_REDAC|oui) (first published on <time datetime="[(#DATE_REDAC|date_iso)]" >[(#DATE_REDAC|affdate{'d.m.Y'})]</time>)]
 				| <a class="responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|linkedin_share_url{#TITRE,#DESCRIPTIF|textebrut})]" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-				<a class="responsive-element" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" class="twitter-share-button" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+				<a class="responsive-element twitter-share-button" href="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG}|twitter_share_url{#TITRE,#SOUSTITRE})]" title="Share on Twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 			</div>
 			<div class="article-header-img">
 				<img src="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" alt="#TITRE">

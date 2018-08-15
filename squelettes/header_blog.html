@@ -10,7 +10,7 @@
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     [(#ENV{titre_mot,'Pick a category'})]
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu">
                     <BOUCLE_mots2(MOTS){id_groupe=1}>
                     <a class="dropdown-item" href="[(#URL_SITE_SPIP|parametre_url{lang,en}|parametre_url{titre_mot,#TITRE})]">#TITRE</a>
                     </BOUCLE_mots2>
@@ -36,7 +36,7 @@
 </div>
 
 <!-- Search modal -->
-<div class="modal fade" id="searchModal" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="searchModal" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">

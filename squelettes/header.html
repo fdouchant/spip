@@ -3,23 +3,24 @@
     <link rel="shortcut icon" href="#CHEMIN{images/favicon.ico}" type="image/x-icon"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
-    <meta http-equiv="Content-Language" content="#LANG"/>
-    <meta charset="#CHARSET"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="theme-color" content="#404040"/>
 
-    <!-- Open Graph Protocol -->
     <BOUCLEmeta(ARTICLES){id_article}{lang}>
-    <meta name="author" content="Fabrice Douchant"/>
+    <title>Fabrice Douchant : #TITRE</title>
+    <!--<meta name="keywords" content="#SOUSTITRE"/>-->
     <meta name="copyright" content="Fabrice Douchant"/>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@fdouchant" />
     <meta name="twitter:creator" content="@fdouchant" />
+
+    <!-- Open Graph Protocol -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="#TITRE" />
-    <meta property='og:description' content="[(#DESCRIPTIF|textebrut)]"/>
+    <meta name="title" property="og:title" content="#TITRE" />
+    <meta name="description" property='og:description' content="[(#DESCRIPTIF|textebrut)]" />
+    <meta name="author" content="Fabrice Douchant"/>
     <meta property="og:url" content="[(#URL_ARTICLE|url_absolue|parametre_url{lang,#LANG})]" />
-    <meta property="og:image" content="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" />
+    <meta name="image" property="og:image" content="[#URL_SITE_SPIP/IMG/(#LOGO_ARTICLE|fichier)]" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -54,10 +55,6 @@
       }
     }
     </script>
-
-    <title>Fabrice Douchant : #TITRE</title>
-    <meta name="description" content="[(#DESCRIPTIF|textebrut)]"/>
-    <meta name="keywords" content="#SOUSTITRE"/>
     </BOUCLEmeta>
     </Bmeta>
     <title>Fabrice Douchant : IT General Blog, Projects, About</title>
@@ -85,7 +82,7 @@
 
 <header>
     <nav class="navbar navbar-expand-md navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand tlt" data-in-effect="flipInX" href="#URL_SITE_SPIP">/* Fabrice Douchant */</a>
@@ -96,9 +93,9 @@
                     <img height="20" alt="<multi>[fr]English[en]Français</multi>"
                          src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
                 </a>
-                <a class="nav-link-shortcut" href="mailto:fabrice.douchant@gmail.com" target="_top" class="navbar-social white-hover"><i
+                <a href="mailto:fabrice.douchant@gmail.com" target="_top" class="nav-link-shortcut navbar-social white-hover"><i
                         class="fa fa-envelope-o"></i></a>
-                <a class="nav-link-shortcut" target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="navbar-social white-hover"><i
+                <a target="_blank" href="https://ch.linkedin.com/in/fdouchant" class="nav-link-shortcut navbar-social white-hover"><i
                         class="fa fa-linkedin-square"></i></a>
             </div>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
