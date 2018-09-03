@@ -89,7 +89,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-text">
-                <a class="nav-link-shortcut responsive-element" href="[(#LANG|=={fr}|?{#URL_SITE_SPIP,[(#URL_PAGE{about,lang=#LANG})]})]">
+                <a class="nav-link-shortcut responsive-element" href="[(#LANG|=={fr}|?{#URL_SITE_SPIP,[(#URL_PAGE{about,lang=fr})]})]">
                     <img height="20" alt="<multi>[fr]English[en]Français</multi>"
                          src="#URL_SITE_SPIP/#DOSSIER_SQUELETTE/images/[(#LANG|=={fr}|?{'en.png','fr.png'})]"/>
                 </a>
@@ -100,7 +100,10 @@
             </div>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#URL_PAGE{sommaire,lang=#LANG}"><multi>[fr]À propos[en]About</multi></a>
+                    <a class="nav-link" href="#URL_SITE_SPIP">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#URL_PAGE{about,lang=#LANG}"><multi>[fr]À propos[en]About</multi></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
