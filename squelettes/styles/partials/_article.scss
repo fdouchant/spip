@@ -1,3 +1,33 @@
+.article {
+  // images
+  div.details-content img {
+    max-width: 100%;
+  }
+
+  // spip images for articles
+  span.spip_documents > img {
+    @extend %article-image;
+  }
+
+  // spip documents for articles (same as image but with caption)
+  dl.spip_documents {
+    img {
+      @extend %article-image;
+    }
+
+    dt.spip_doc_titre {
+      margin: auto;
+      width: auto !important;
+      text-align: center;
+
+      > strong {
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+  }
+}
+
 .article-header {
   @extend .container-fluid, .py-3;
   background-color: $fabrice-light-grey;

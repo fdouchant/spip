@@ -9,29 +9,6 @@ table.spip {
   @extend .table-hover;
 }
 
-// spip images for articles
-span.spip_documents > img {
-  @extend %article-image;
-}
-
-// spip documents for articles (same as image but with caption)
-dl.spip_documents {
-  img {
-    @extend %article-image;
-  }
-
-  dt.spip_doc_titre {
-    margin: auto;
-    width: auto !important;
-    text-align: center;
-
-    > strong {
-      font-weight: normal;
-      font-style: italic;
-    }
-  }
-}
-
 // spip pagination
 #pagination {
   text-align: center;
